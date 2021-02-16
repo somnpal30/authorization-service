@@ -15,23 +15,23 @@ export class RemoteDataService implements OnInit {
   }
 
   loadWorkspace(): Observable<Workspace> {
-    return this.httpClient.get<Workspace>("/assets/data/workspace.json")
+    return this.httpClient.get<Workspace>('./assets/data/workspace.json');
   }
 
   loadAuthorizationProfileList(): Observable<AuthorizationProfileList> {
-    return this.httpClient.get<AuthorizationProfileList>("/assets/data/view-auth-profile-list.json")
+    return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json');
   }
 
   loadModuleAndServiceDetails(): Observable<ModuleAndServices> {
-    return this.httpClient.get<ModuleAndServices>("/assets/data/headmerchant.json")
+    return this.httpClient.get<ModuleAndServices>('./assets/data/headmerchant.json');
   }
 
   loadChannel(): Observable<ServiceDetails> {
-    return this.httpClient.get<ServiceDetails>("/assets/data/catalogue/channel.json")
+    return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/channel.json');
   }
 
   loadLevel(): Observable<ServiceDetails> {
-    return this.httpClient.get<ServiceDetails>("/assets/data/catalogue/level.json")
+    return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/level.json');
   }
 
 
