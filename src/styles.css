@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #E8EEF6 !important;
+  padding-left: 2rem;
+  /* padding-right: 2rem;*/
+   padding-top: 1rem;
+}
+
+.page-header {
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: bold;
+  font-size: 16px;
+  color: #727270;
+}
+
+.container-main {
+  background-color: #FFFFFF;
+  font-family: Nunito Sans;
+  font-weight: bold;
+  font-size: 15px;
+  color: #7A7A7A;
+  /*  padding-top: 10px;*/
+
+}
+
+.btn-red {
+  color: #FFFFFF !important;
+  background-color: #F02 !important;
+  border-color:  #F02 !important;
+  width : 150px !important;
+  font-size: 13px !important;
+  font-family: Nunito Sans !important;
+}
+
+.btn-grey {
+  color: #7A7A7A !important;
+  border-color:  #FBFBFB !important;
+  background-color: #FBFBFB !important;
+  /*width: 100px !important;*/
+
+}
+.btn-filter {
+  color: #007bff !important;
+  border-color:  #FBFBFB !important;
+  background-color: #FBFBFB !important;
+  /*width: 100px !important;*/
+
+}
+
+.font-bold {
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 700 !important;
+  color: #727270;
+}
+.font-bold-12 {
+  font-size: 12px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-weight: 600 !important;
+  color: #727270;
+}
+body .ui-table .ui-table-tbody > tr > td {
+  border: 0 none;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  border-radius : 10% !important;
+  min-width: 2rem !important;
+  height: 2rem !important;
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.p-paginator .p-paginator-current {
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+.p-paginator .p-dropdown .p-dropdown-label {
+  color: #727270;
+  font-size: 13px !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
+  color: #FFFFFF !important;
+  border-color: #007bff !important;
+  background-color: #007bff !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #007bff !important;
+  background-color: #007bff !important;
+  /*box-sizing: inherit !important;*/
+}
+
+.p-field-checkbox {
+  align-items: flex-start !important;
+}
+
+
+.disabled {
+  color: #E0E0E0;
+}
+.enabled {
+  color: #727270;
+}
+
+.nav-unselect {
+  background-color: #FBFBFB;
+  color: #E0E0E0;
+  margin-left: 3px;
+}
+.nav-select {
+  background-color: #FF0022;
+  color: #FFF;
+  margin-left: 3px;
+}
+
+.module-list {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+.module-list:hover {
+  background-color: #E0E0E0;
+}
+.module-list:active {
+  background-color: lightblue;
+}
+
+.colorScrollBar{
+
+}
+.p-scrollpanel .p-scrollpanel-bar {
+  background: #007bff !important;
+  border: none !important;
+}
+
+.p-listbox{
+  border: 0 !important;
+}

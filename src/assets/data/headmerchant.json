@@ -1,0 +1,336 @@
+{
+	"modules": [
+		{
+			"name": "Mpay Cash In/Out",
+			"privileges": [
+				{
+					"code": "COUT_WEB",
+					"name": "Money Creation Cash Out",
+					"attributes": []
+				},
+				{
+					"code": "AGCOUT_WEB",
+					"name": "Money Creation Agent Cash Out",
+					"attributes": []
+				},
+				{
+					"code": "CIN_WEB",
+					"name": "Money Creation Cash In",
+					"attributes": []
+				},
+				{
+					"code": "COUT_DISP",
+					"name": "Money Creation Cash Out",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "TransactionCorrectionInitiati",
+			"privileges": [
+				{
+					"code": "TXN_CORRECTION",
+					"name": "Transaction Correction Initiation",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Mpay  Enquiry",
+			"privileges": [
+				{
+					"code": "ENQ_LUS",
+					"name": "Enquiry",
+					"attributes": []
+				},
+				{
+					"code": "ENQ_US",
+					"name": "Enquiry",
+					"attributes": []
+				},
+				{
+					"code": "ENQ_LUSC",
+					"name": "Enquiry",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Session Management",
+			"privileges": [
+				{
+					"code": "LOGOUT_SESSION",
+					"name": "Logout Session",
+					"attributes": []
+				},
+				{
+					"code": "DELETE_DEVICE",
+					"name": "Delete Device",
+					"attributes": []
+				},
+				{
+					"code": "MY_SESSION",
+					"name": "My Session",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "IMS",
+			"privileges": [
+				{
+					"code": "IMS_BULK_INIT",
+					"name": "IMS Bulk Initiate",
+					"attributes": []
+				},
+				{
+					"code": "IMS_BULK_APPROVE",
+					"name": "IMS Bulk Payout Approval",
+					"attributes": []
+				},
+				{
+					"code": "IMS_BULK_DASHBOARD",
+					"name": "IMS Bulk Payout Dashboard",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Enable Standard Instruction",
+			"privileges": [
+				{
+					"code": "AUTOENASI",
+					"name": "Enable Standard Instruction",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Disable Standard Instruction",
+			"privileges": [
+				{
+					"code": "AUTODISSI",
+					"name": "Disable Standard Instruction",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"privileges": [
+				{
+					"code": "C2C",
+					"name": "Channel to Channel",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Disable Auto Debit",
+			"privileges": [
+				{
+					"code": "AUTODIS",
+					"name": "Disable Auto Debit",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Authorization Profile",
+			"privileges": [
+				{
+					"code": "CLONE_AUTH_PROFILE",
+					"name": "Clone Authorization Profile",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "VIEW_AUTH_PROFILE",
+					"name": "View Authorization Profile",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "MODAUTHPRF",
+					"name": "Edit Authorization Profile",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "AUTH_PROFILE_MGMT",
+					"name": "Authorization Management",
+					"attributes": []
+				},
+				{
+					"code": "CRTAUTHPRF",
+					"name": "Add Authorization Profile",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "DELAUTHPRF",
+					"name": "Delete Authorization Profile",
+					"attributes": [
+						"USER_TYPES"
+					]
+				}
+			]
+		},
+		{
+			"name": "SVA To Own Bank Account",
+			"privileges": [
+				{
+					"code": "RESUMESHTR",
+					"name": "Resume Scheduled Transfers",
+					"attributes": []
+				},
+				{
+					"code": "VMSDSHTR",
+					"name": "View/Modify/Stop/Delete Scheduled Transfers",
+					"attributes": []
+				},
+				{
+					"code": "SVATOBANK",
+					"name": "SVA To Own Bank Account",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Party",
+			"privileges": [
+				{
+					"code": "PTY_BLKL",
+					"name": "blacklist",
+					"attributes": []
+				},
+				{
+					"code": "SR_PIN",
+					"name": "Reset PIN",
+					"attributes": []
+				},
+				{
+					"code": "PTY_VBLK",
+					"name": "blacklist",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Pentaho Report",
+			"privileges": [
+				{
+					"code": "PENT_REP",
+					"name": "Pentaho Report",
+					"attributes": []
+				}
+			]
+		},
+    {
+      "name": "test mpay"
+    },
+		{
+			"name": "All Channel User Commission",
+			"privileges": [
+				{
+					"code": "RPT_ACUC_ROLE",
+					"name": "All Channel User Commission",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Reimbursement",
+			"privileges": [
+				{
+					"code": "REMB_MNT",
+					"name": "Reimbursement",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Approval",
+			"privileges": [
+				{
+					"code": "APPROVAL",
+					"name": "Approval",
+					"attributes": [
+						"LEVELS",
+						"USER_TYPES"
+					]
+				}
+			]
+		},
+		{
+			"name": "Mpay C2C",
+			"privileges": [
+				{
+					"code": "INVC2C",
+					"name": "Inverse C2C Transaction",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Enable Auto Debit",
+			"privileges": [
+				{
+					"code": "AUTOEAD",
+					"name": "Enable Auto Debit",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"privileges": [
+				{
+					"code": "SEARCH_USER",
+					"name": "Search User",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "MY_USERS",
+					"name": "My Users",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "REGISTRATION",
+					"name": "Registration",
+					"attributes": [
+						"USER_TYPES"
+					]
+				},
+				{
+					"code": "MODIFY_USER",
+					"name": "Modify User",
+					"attributes": [
+						"USER_TYPES"
+					]
+				}
+			]
+		},
+		{
+			"name": "Mpay Enquiry",
+			"privileges": [
+				{
+					"code": "ENQ_USC",
+					"name": "Enquiry",
+					"attributes": []
+				}
+			]
+		}
+	],
+	"serviceRequestId": "87f6d1c7-4ad8-485b-abc7-2c148a256f8a",
+	"serviceFlow": "GETPRVLGS",
+	"status": "SUCCEEDED"
+}

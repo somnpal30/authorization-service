@@ -1,0 +1,20 @@
+<div class="container-main rounded" style="margin-right: 1rem !important; padding: 1rem;">
+  <div class="font-weight-bold " style="margin-left: 3px; margin-bottom: 5px;">Select user type</div>
+  <div>
+    <nav class="nav nav-pills nav-justified">
+      <p class="nav-item nav-link"
+         (click)="displayUserRole(i)"
+         *ngFor="let workspace of workspaceCategoryDetails; let i = index"
+         [ngClass]="((selectedNavIndex === i) ? 'nav-select' : 'nav-unselect') ">{{workspace.workspaceName}}</p>
+    </nav>
+  </div>
+  <div class="font-weight-bold " style="margin-left: 3px; margin-bottom: 5px;">Select user role</div>
+  <div class="row">
+    <div class="col-2 font-bold-12" *ngFor="let category of selectedCategoryCol">
+      <div class="p-field-radiobutton">
+        <p-radioButton name="group1" value="{{category.categoryId}}" [(ngModel)]="selectedCategory" inputId="{{category.categoryId}}"></p-radioButton>
+        <label for="{{category.categoryId}}"> {{category.categoryName}}</label>
+      </div>
+    </div>
+  </div>
+</div>

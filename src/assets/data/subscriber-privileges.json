@@ -1,0 +1,167 @@
+{
+	"modules": [
+		{
+			"name": "Services",
+			"privileges": [
+				{
+					"code": "P2PNONREG",
+					"name": "P2P - Send Money to Unknown",
+					"attributes": []
+				},
+				{
+					"code": "CASHIN",
+					"name": "Cash In",
+					"attributes": []
+				},
+				{
+					"code": "CASHOUT",
+					"name": "Cash Out",
+					"attributes": []
+				},
+				{
+					"code": "P2P",
+					"name": "Peer To Peer",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "IMT Services",
+			"privileges": [
+				{
+					"code": "IMTTIVR",
+					"name": "IMT Transaction Inquiry",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Session Management",
+			"privileges": [
+				{
+					"code": "LOGOUT_SESSION",
+					"name": "Logout Session",
+					"attributes": []
+				},
+				{
+					"code": "DELETE_DEVICE",
+					"name": "Delete Device",
+					"attributes": []
+				},
+				{
+					"code": "MY_SESSION",
+					"name": "My Session",
+					"attributes": []
+				}
+			]
+		},
+		{
+			"name": "Mpay Services",
+			"privileges": [
+				{
+					"code": "CTXNPWDREQ",
+					"name": "Change Transaction Password",
+					"attributes": []
+				},
+				{
+					"code": "STDBILPAY",
+					"name": "Standard Bill Payment",
+					"attributes": []
+				},
+				{
+					"code": "ADREG",
+					"name": "Register Biller for Auto Debit",
+					"attributes": []
+				},
+				{
+					"code": "SIDEREG",
+					"name": "Deregister Beneficiary for SI",
+					"attributes": []
+				},
+				{
+					"code": "SUBDELBEN",
+					"name": "Delete Beneficiary",
+					"attributes": []
+				},
+				{
+					"code": "SIREG",
+					"name": "Register Beneficiary for SI",
+					"attributes": []
+				},
+				{
+					"code": "CPWDREQ",
+					"name": "Change Password",
+					"attributes": []
+				},
+				{
+					"code": "ADDEREG",
+					"name": "Deregister Biller for Auto Debit",
+					"attributes": []
+				},
+				{
+					"code": "RYTCANRM",
+					"name": "RYT Cancel Receive Money",
+					"attributes": []
+				},
+				{
+					"code": "BR_BAL",
+					"name": "Bank Bal",
+					"attributes": []
+				},
+				{
+					"code": "SUBADDBEN",
+					"name": "Add Beneficiary",
+					"attributes": []
+				},
+				{
+					"code": "RYTCUSTAVLNOT",
+					"name": "RYT Customer Available Notification",
+					"attributes": []
+				},
+				{
+					"code": "RYTQPDAT",
+					"name": "RYT Transaction Query per date",
+					"attributes": []
+				},
+				{
+					"code": "SUBBILREG",
+					"name": "Subscriber Biller Association",
+					"attributes": []
+				},
+				{
+					"code": "RYTTXNENQ",
+					"name": "RYT Transaction Enquiry",
+					"attributes": []
+				},
+				{
+					"code": "APRPENDTXN",
+					"name": "Approval Pending Transaction Details",
+					"attributes": []
+				},
+				{
+					"code": "RYTQACINFN",
+					"name": "RYT Query Account Information",
+					"attributes": []
+				},
+				{
+					"code": "GETLANREQ",
+					"name": "Get Current language",
+					"attributes": []
+				},
+				{
+					"code": "RYTTELENQ",
+					"name": "RYT Telephone Enquiry",
+					"attributes": []
+				},
+				{
+					"code": "OLBILPAY",
+					"name": "Online Bill Payment",
+					"attributes": []
+				}
+			]
+		}
+	],
+	"serviceRequestId": "8693d888-060d-4344-a0d3-899a9931892f",
+	"serviceFlow": "GETPRVLGS",
+	"status": "SUCCEEDED"
+}

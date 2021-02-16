@@ -1,0 +1,41 @@
+<div class="card">
+  <p-table [value]="authorizationProfiles" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+           [rowsPerPageOptions]="[5,10,25]"  selectionMode="single" dataKey="code"
+           (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    <ng-template pTemplate="header">
+      <tr class="font-bold">
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="profilename">PROFILE NAME
+          <p-sortIcon field="profilename"></p-sortIcon>
+        </th>
+        <th>CATEGORY</th>
+        <th>TYPE</th>
+        <th>CREATED ON</th>
+        <th>CREATED BY</th>
+        <th>MODIFIED ON</th>
+        <th>ACTION</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-authorizationProfile>
+      <tr class="font-bold">
+        <td>
+          <p-tableCheckbox  [value]="authorizationProfile"></p-tableCheckbox>
+        </td>
+        <td>{{authorizationProfile.name}}</td>
+        <td>{{authorizationProfile.categoryName}}</td>
+        <td>{{authorizationProfile.type}}</td>
+        <td>{{authorizationProfile.createdOn}}</td>
+        <td>{{authorizationProfile.createdBy}}</td>
+        <td>{{authorizationProfile.modifiedOn}}</td>
+        <td>
+          <i class="pi pi-pencil"  [ngClass]="{'disabled' : authorizationProfile.type ==='Default'}" style="padding-left: 1rem !important;"></i>
+          <i class="pi pi-copy" style="padding-left: 1rem !important;  "></i>
+          <i class="pi pi-trash" style="padding-left: 1rem !important;"></i>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

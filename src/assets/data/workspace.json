@@ -1,0 +1,152 @@
+{
+  "serviceRequestId": "0aa14b97-44ae-471c-a7f8-f84d5b3f5d11",
+  "workspaceCategoryDetails": [
+    {
+      "workspaceId": "SUBSCRIBER",
+      "workspaceName": "Subscriber",
+      "categories": [
+        {
+          "categoryId": "BWASUBS",
+          "categoryName": "Botswana Subscriber"
+        },
+        {
+          "categoryId": "GBRSUBS",
+          "categoryName": "Great Britain Subscriber"
+        },
+        {
+          "categoryId": "MBASUBS",
+          "categoryName": "MBA Subscriber"
+        },
+        {
+          "categoryId": "SASUBS",
+          "categoryName": "SA Subscriber"
+        },
+        {
+          "categoryId": "SUBS",
+          "categoryName": "Subscriber"
+        },
+        {
+          "categoryId": "ZMBSUBS",
+          "categoryName": "Zambia Subscriber"
+        }
+      ]
+    },
+    {
+      "workspaceId": "ADMIN",
+      "workspaceName": "Administrator",
+      "categories": [
+        {
+          "categoryId": "ADM",
+          "categoryName": "Administrator"
+        },
+        {
+          "categoryId": "BCU",
+          "categoryName": "Channel Admin"
+        },
+        {
+          "categoryId": "BNKADM",
+          "categoryName": "Bank Admin"
+        },
+        {
+          "categoryId": "BNKUSR",
+          "categoryName": "Bank User"
+        },
+        {
+          "categoryId": "CCE",
+          "categoryName": "Customer Care"
+        },
+        {
+          "categoryId": "ENTADM",
+          "categoryName": "Bulk Payer Admin"
+        },
+        {
+          "categoryId": "NWADM",
+          "categoryName": "Network Admin"
+        },
+        {
+          "categoryId": "OPT",
+          "categoryName": "Operator"
+        },
+        {
+          "categoryId": "SUADM",
+          "categoryName": "Super Admin"
+        },
+        {
+          "categoryId": "VADM",
+          "categoryName": "Vault Admin"
+        }
+      ]
+    },
+    {
+      "workspaceId": "BUSINESS",
+      "workspaceName": "Business",
+      "categories": [
+        {
+          "categoryId": "BNK",
+          "categoryName": "Bank"
+        },
+        {
+          "categoryId": "EMP",
+          "categoryName": "Employee"
+        },
+        {
+          "categoryId": "EMPLOYER",
+          "categoryName": "Enterprise"
+        },
+        {
+          "categoryId": "Enterprise",
+          "categoryName": "Corporate"
+        },
+        {
+          "categoryId": "HMER",
+          "categoryName": "Head Merchant"
+        },
+        {
+          "categoryId": "INTPAT",
+          "categoryName": "International Partner"
+        },
+        {
+          "categoryId": "MER",
+          "categoryName": "Merchant"
+        },
+        {
+          "categoryId": "MERCHANT",
+          "categoryName": "Telco operator"
+        },
+        {
+          "categoryId": "PROLLOPT",
+          "categoryName": "Payroll Operator"
+        },
+        {
+          "categoryId": "RT",
+          "categoryName": "Retailer"
+        },
+        {
+          "categoryId": "SMER",
+          "categoryName": "Sub Merchant"
+        },
+        {
+          "categoryId": "SSA",
+          "categoryName": "Special super agent"
+        },
+        {
+          "categoryId": "TR",
+          "categoryName": "Teller"
+        },
+        {
+          "categoryId": "WBILLMER",
+          "categoryName": "Biller"
+        },
+        {
+          "categoryId": "WHS",
+          "categoryName": "Wholesaler"
+        }
+      ]
+    }
+  ],
+  "mfsTenantId": "mfsPrimaryTenant",
+  "serviceFlow": "GET_WORKSPACE_CATEGORIES",
+  "transactionTimeStamp": "2021-02-08T14:23:00",
+  "originalServiceRequestId": "0aa14b97-44ae-471c-a7f8-f84d5b3f5d11",
+  "status": "SUCCEEDED"
+}

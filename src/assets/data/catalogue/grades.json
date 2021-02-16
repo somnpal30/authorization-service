@@ -1,0 +1,160 @@
+{
+  "grades": [
+    {
+      "code": "HSGR2315",
+      "name": "HSGR2315"
+    },
+    {
+      "code": "HSGR1344",
+      "name": "HSGR1344"
+    },
+    {
+      "code": "HSGR5104",
+      "name": "HSGR5104"
+    },
+    {
+      "code": "HSGR9660",
+      "name": "HSGR9660"
+    },
+    {
+      "code": "HSGR3061",
+      "name": "HSGR3061"
+    },
+    {
+      "code": "HSGR9827",
+      "name": "HSGR9827"
+    },
+    {
+      "code": "HSGR4859",
+      "name": "HSGR4859"
+    },
+    {
+      "code": "HSGR5401",
+      "name": "HSGR5401"
+    },
+    {
+      "code": "HSGR4027",
+      "name": "HSGR4027"
+    },
+    {
+      "code": "NewGradeM",
+      "name": "NewGradeM"
+    },
+    {
+      "code": "MERA",
+      "name": "Merchant"
+    },
+    {
+      "code": "SUBS",
+      "name": "Gold Subscriber"
+    },
+    {
+      "code": "SSUBS",
+      "name": "Silver Subscriber"
+    },
+    {
+      "code": "GWS",
+      "name": "Gold Wholesaler"
+    },
+    {
+      "code": "SWS",
+      "name": "Silver Wholesaler"
+    },
+    {
+      "code": "GRT",
+      "name": "Gold Retailer"
+    },
+    {
+      "code": "SRT",
+      "name": "Silver Retailer"
+    },
+    {
+      "code": "OPT",
+      "name": "Operator "
+    },
+    {
+      "code": "HMERGRD",
+      "name": "Biller"
+    },
+    {
+      "code": "MERCHANT",
+      "name": "Topup Partners"
+    },
+    {
+      "code": "HMERA",
+      "name": "Head Merchant"
+    },
+    {
+      "code": "USUBS",
+      "name": "Unregistered Subscriber"
+    },
+    {
+      "code": "GoldEnterp",
+      "name": "GoldEnterprise"
+    },
+    {
+      "code": "PlatinumEn",
+      "name": "PlatinumEnterprise"
+    },
+    {
+      "code": "superag",
+      "name": "superagent"
+    },
+    {
+      "code": "ENTADMIN",
+      "name": "Bulk Payer Admin"
+    },
+    {
+      "code": "BNK",
+      "name": "BANK"
+    },
+    {
+      "code": "VADM",
+      "name": "Vault Admin"
+    },
+    {
+      "code": "TR",
+      "name": "Gold Teller"
+    },
+    {
+      "code": "STR",
+      "name": "Silver Teller"
+    },
+    {
+      "code": "INTLDEMO",
+      "name": "DEMO Country"
+    },
+    {
+      "code": "BANKSUBS",
+      "name": "BANKSUBS"
+    },
+    {
+      "code": "CARDSUBS",
+      "name": "CARDSUBS"
+    },
+    {
+      "code": "HSGR2372",
+      "name": "HSGR2372"
+    },
+    {
+      "code": "HSGR1591",
+      "name": "HSGR1591"
+    },
+    {
+      "code": "HSGR1737",
+      "name": "HSGR1737"
+    },
+    {
+      "code": "HSGR1193",
+      "name": "HSGR1193"
+    },
+    {
+      "code": "HSGR8507",
+      "name": "HSGR8507"
+    },
+    {
+      "code": "1",
+      "name": "r"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "channels": [
+    {
+      "code": "API",
+      "name": "API"
+    },
+    {
+      "code": "MOBILE",
+      "name": "MOBILE"
+    }
+  ]
+}

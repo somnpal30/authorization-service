@@ -1,0 +1,1060 @@
+{
+  "serviceRequestId": "a33c0124-a50c-4c18-b4cd-3d2661564975",
+  "mfsTenantId": "mfsPrimaryTenant",
+  "menus": [
+    {
+      "moduleCode": "DOMMANAGE",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/domainMgmt/confirmAddDomain_addDetails.action",
+          "labelKey": "DOM_ADD",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "102"
+    },
+    {
+      "moduleCode": "PARTY",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/globalSearch_input.action",
+          "labelKey": "RP_GOS",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/blacklist/barAction_input.action",
+          "labelKey": "PTY_BLKL",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/blacklist/viewBlackListAction_input.action",
+          "labelKey": "PTY_VBLK",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/blacklist/p2pUnBlackListAction_input.action",
+          "labelKey": "PTY_PUL",
+          "order": "9"
+        }
+      ],
+      "icon": "",
+      "order": "2"
+    },
+    {
+      "moduleCode": "TRULES",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/trfrules/trSelect_loadServiceTypes.action",
+          "labelKey": "T_RULES",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/trfrules/o2cTrf_input.action",
+          "labelKey": "O2C_TR",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/trfrules/trfRulesApp_loadTransferRulesForApproval.action",
+          "labelKey": "T_RULAPP",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "18"
+    },
+    {
+      "moduleCode": "CATADD",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/utility/addnewcategorydelete_deleteInput.action",
+          "labelKey": "DELETE_CAT",
+          "order": "126"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/viewcategory_view.action",
+          "labelKey": "VIEW_CAT",
+          "order": "127"
+        }
+      ],
+      "icon": "",
+      "order": "120"
+    },
+    {
+      "moduleCode": "CAT_APPRL",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/utility/addcategoryapproval_loadApprovalInput.action",
+          "labelKey": "ADD_CAT_APPROVAL",
+          "order": "124"
+        }
+      ],
+      "icon": "",
+      "order": "121"
+    },
+    {
+      "moduleCode": "PENTREPORT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/pentReport_launch.action",
+          "labelKey": "PENT_REP",
+          "order": "5"
+        }
+      ],
+      "icon": "",
+      "order": "602"
+    },
+    {
+      "moduleCode": "CHURNMGMT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/churnManagementAction_initiation.action",
+          "labelKey": "CHURNMGMT_MAIN",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "10000"
+    },
+    {
+      "moduleCode": "O2CTRF",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/stock/o2cInitiate_input.action?serviceType=O2C",
+          "labelKey": "O2CINT001",
+          "order": "9"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/o2cApproval1_input.action?approvalLevel=1&serviceType=O2C",
+          "labelKey": "O2CAPP01",
+          "order": "10"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/o2cApproval2_input.action?approvalLevel=2&serviceType=O2C",
+          "labelKey": "O2CAPP02",
+          "order": "11"
+        }
+      ],
+      "icon": "",
+      "order": "13"
+    },
+    {
+      "moduleCode": "TCPROFILE",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/tcprf/tcpInstrumentLevel_loadInstrumentLevelTcps.action",
+          "labelKey": "TCP_INSTRMENT",
+          "order": "7"
+        },
+        {
+          "viewUrl": "CoreWeb/tcprf/tcpInstrumentLevelAppr_loadListForApprovalTCPInst.action",
+          "labelKey": "TCP_INSTRAPPR",
+          "order": "8"
+        }
+      ],
+      "icon": "",
+      "order": "4"
+    },
+    {
+      "moduleCode": "NONFIN",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/servprofile/confirmAddNon_addDetails.action",
+          "labelKey": "CHARGENON_FIN",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/chargingMod_modifyDetails.action",
+          "labelKey": "CHARGENON_MOD",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/chargingSus_loadServiceChargeProfileForSuspendResume.action",
+          "labelKey": "CHARGENON_SUS",
+          "order": "3"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/chargingView_viewDetails.action",
+          "labelKey": "CHARGENON_VIEW",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/chargingAppr_viewApprovalDetails.action",
+          "labelKey": "CHARGENON_APP",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/chargingCalc_loadCalculator.action",
+          "labelKey": "CHARGENON_CALC",
+          "order": "6"
+        }
+      ],
+      "icon": "",
+      "order": "35"
+    },
+    {
+      "moduleCode": "GEOMASTER",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/geoMgmt/geoMgmt_loadDomainTypeList.action",
+          "labelKey": "GRDOM001",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "41"
+    },
+    {
+      "moduleCode": "MNREC",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/reconciliation/reconciliation_loadReconciliationBalance.action",
+          "labelKey": "MN_REC",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "75"
+    },
+    {
+      "moduleCode": "CLUBS",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_input.action",
+          "labelKey": "ADD_CLUB",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_executeApproval.action",
+          "labelKey": "APP_CLUB",
+          "order": "3"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_modifyClub.action",
+          "labelKey": "MOD_CLUB",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_modifyApproval.action",
+          "labelKey": "MODAPP_CLUB",
+          "order": "7"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_delete.action",
+          "labelKey": "DEL_CLUB",
+          "order": "9"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_deleteApproval.action",
+          "labelKey": "DELAPP_CLUB",
+          "order": "11"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubViewServiceBean_executeView.action",
+          "labelKey": "VIEW_CLUB",
+          "order": "12"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_trfAdmin.action",
+          "labelKey": "TRF_CLUB_ADM",
+          "order": "15"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_executeTrfAdminApproval.action",
+          "labelKey": "APPTRF_CLUB_ADM",
+          "order": "17"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_clubReport.action",
+          "labelKey": "CLUB_VIEW_REPORT",
+          "order": "19"
+        },
+        {
+          "viewUrl": "CoreWeb/party/clubRegisterationServiceBean_clubTrfRightsRptInput.action",
+          "labelKey": "CLUB_TRF_REPORT",
+          "order": "21"
+        }
+      ],
+      "icon": "",
+      "order": "300"
+    },
+    {
+      "moduleCode": "USER_MANAGEMENT",
+      "subMenus": [
+        {
+          "viewUrl": "usermanagementui/#/user-registration",
+          "labelKey": "UMS_REGISTER",
+          "order": "1"
+        },
+        {
+          "viewUrl": "usermanagementui/#/user-modification",
+          "labelKey": "UMS_MANAGE_USERS",
+          "order": "2"
+        },
+        {
+          "viewUrl": "usermanagementui/#/my-users",
+          "labelKey": "UMS_MY_USERS",
+          "order": "3"
+        }
+      ],
+      "icon": "",
+      "order": "10000004"
+    },
+    {
+      "moduleCode": "STOCK",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/stock/stockInit_input.action",
+          "labelKey": "STK_INIT",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockApprove1_input.action?levels=1",
+          "labelKey": "STK_APP1",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockApprove2_input.action?levels=2",
+          "labelKey": "STK_APP2",
+          "order": "3"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockApprovalTransferLimitAction_input.action?serviceType=STOCK",
+          "labelKey": "STK_LMT",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockTransferInit_input.action",
+          "labelKey": "STR_INIT",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockEnq_input.action?serviceType=STOCK",
+          "labelKey": "STK_ENQ",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockTransferApprove1_input.action?levels=1",
+          "labelKey": "STR_APP1",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/withdraw_input.action?serviceType=OPTW",
+          "labelKey": "STK_REMB",
+          "order": "6"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockTransferApprove2_input.action?levels=2",
+          "labelKey": "STR_APP2",
+          "order": "6"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/OPTWithdrawlActionApproval_input.action?serviceType=OPTW",
+          "labelKey": "STK_REAP",
+          "order": "7"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockApprovalTransferLimitActionR_input.action?serviceType=STKTR2OCA",
+          "labelKey": "STR_LMT",
+          "order": "7"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/OPTWithdrawlStatus_showStatusList.action?serviceType=OPTW",
+          "labelKey": "STK_REST",
+          "order": "8"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockWithdraw_input.action",
+          "labelKey": "STK_WITHDRAWDM",
+          "order": "8"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockEnqR_input.action?serviceType=STKTR2OCA",
+          "labelKey": "STR_ENQ",
+          "order": "8"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockInitIMT_input.action",
+          "labelKey": "STK_IMT_INI",
+          "order": "9"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockIMTApprove1_input.action?levels=1",
+          "labelKey": "STK_IMT_APPROVAL1",
+          "order": "10"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockLIQApprove1_input.action?levels=1",
+          "labelKey": "STK_LIQ_APPROVAL1",
+          "order": "10"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockIMTApprove2_input.action?levels=2",
+          "labelKey": "STK_IMT_APPROVAL2",
+          "order": "11"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockInitLoyalty_input.action",
+          "labelKey": "STK_LOYALTY_INI",
+          "order": "12"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockLoyaltyApprove1_input.action?levels=1",
+          "labelKey": "STK_LOYALTY_APPR1",
+          "order": "13"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockLoyaltyApprove2_input.action?levels=2",
+          "labelKey": "STK_LOYALTY_APPR2",
+          "order": "14"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockApprovalTransferLimitActionRA_input.action?serviceType=STOCK_LOY",
+          "labelKey": "STK_LOYALTY_LMT",
+          "order": "15"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockLoyaltyWithdraw_input.action",
+          "labelKey": "STK_LOY_WITHDRAWDM",
+          "order": "16"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/escrowInit_input.action",
+          "labelKey": "ESC_TRFDM",
+          "order": "17"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockInterestWalletInit_input.action",
+          "labelKey": "STK_INTERESTINIT",
+          "order": "17"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/escrowApprove_input.action",
+          "labelKey": "ESC_TRF_APPDM",
+          "order": "18"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockInterestWalletApprove1_input.action?levels=1",
+          "labelKey": "STK_INTERESTAPP1",
+          "order": "18"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/stockInterestWalletApprove2_input.action?levels=2",
+          "labelKey": "STK_INTERESTAPP2",
+          "order": "19"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockWithdrawApprove_input.action?levels=1",
+          "labelKey": "STK_WITHDRAW_APPDM",
+          "order": "99996"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockWithdrawApprove2_input.action?levels=2",
+          "labelKey": "STK_WITHDRAW_APP2DM",
+          "order": "100001"
+        },
+        {
+          "viewUrl": "CoreWeb/stock/StockApprovalTransferLimitActionWithdraw_input.action?serviceType=STOCKOUT",
+          "labelKey": "STK_WITHDRAWL_LMTDM",
+          "order": "100002"
+        }
+      ],
+      "icon": "",
+      "order": "23"
+    },
+    {
+      "moduleCode": "BULKPAY",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=payout&actionPage=upload",
+          "labelKey": "BULK_INITIATE",
+          "order": "123"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=reject&actionPage=upload",
+          "labelKey": "REJECT_BULK_PAYOUT",
+          "order": "123"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=payout&actionPage=requests&approvalLevel=1",
+          "labelKey": "NEW_BULK_APPROVE",
+          "order": "125"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=payout&actionPage=dashboard&approvalLevel=0",
+          "labelKey": "BULK_DASHBOARD",
+          "order": "127"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=payout&actionPage=requests&approvalLevel=2",
+          "labelKey": "NEW_BULK_APPROVE_2",
+          "order": "99997"
+        }
+      ],
+      "icon": "",
+      "order": "117"
+    },
+    {
+      "moduleCode": "MLTPLWALLT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/mfs/multipleWalletMgmt_input.action",
+          "labelKey": "MLTPLWALLT_ADD",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/mfs/multipleWalletMgmtView_input.action",
+          "labelKey": "MLTPLWALLT_VIEW",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/mfs/multipleWalletMgmtModify_input.action?action=update",
+          "labelKey": "MLTPLWALLT_MOD",
+          "order": "3"
+        },
+        {
+          "viewUrl": "CoreWeb/mfs/multipleWalletMgmtDelete_input.action?action=delete",
+          "labelKey": "MLTPLWALLT_DEL",
+          "order": "4"
+        }
+      ],
+      "icon": "",
+      "order": "1097"
+    },
+    {
+      "moduleCode": "Interest",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/InterestProfileManagementAction_initiation.action",
+          "labelKey": "Interest_INIT",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "9900"
+    },
+    {
+      "moduleCode": "PARTYUI",
+      "subMenus": [
+        {
+          "viewUrl": "partyui/#/customer-registration",
+          "labelKey": "CUST_REG",
+          "order": "1"
+        },
+        {
+          "viewUrl": "partyui/#/modify",
+          "labelKey": "MODIFY",
+          "order": "2"
+        },
+        {
+          "viewUrl": "partyui/#/customer-registration-approval",
+          "labelKey": "CUST_REG_APPR",
+          "order": "3"
+        },
+        {
+          "viewUrl": "partyui/#/regulatory-profile",
+          "labelKey": "REGULATORY_PROFILE",
+          "order": "4"
+        },
+        {
+          "viewUrl": "partyui/#/marketing-profile",
+          "labelKey": "MARKETING_PROFILE",
+          "order": "5"
+        },
+        {
+          "viewUrl": "partyui/#/unblock-user",
+          "labelKey": "UNBLOCK_USER",
+          "order": "6"
+        },
+        {
+          "viewUrl": "partyui/#/error-messages",
+          "labelKey": "ERROR_MESSAGE",
+          "order": "7"
+        },
+        {
+          "viewUrl": "partyui/#/recent-activity",
+          "labelKey": "RECENT_ACTIVITY",
+          "order": "8"
+        }
+      ],
+      "icon": "",
+      "order": "800"
+    },
+    {
+      "moduleCode": "MPREF",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/preferences/preferences_input.action",
+          "labelKey": "PREF001",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/party/smsCr_loadSMS.action",
+          "labelKey": "SMS_CRDM",
+          "order": "15"
+        }
+      ],
+      "icon": "",
+      "order": "9"
+    },
+    {
+      "moduleCode": "COMMDIS",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/commission/commissionDisbursementAction_input.action",
+          "labelKey": "COMMDISINITIATE",
+          "order": "125"
+        },
+        {
+          "viewUrl": "CoreWeb/commission/commissionDisbursementAction_input.action",
+          "labelKey": "COM_WITHDRW",
+          "order": "125"
+        }
+      ],
+      "icon": "",
+      "order": "118"
+    },
+    {
+      "moduleCode": "BULKHCM",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/viewUserHierachy_input.action",
+          "labelKey": "BLK_VUH",
+          "order": "1011"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=payout&actionPage=hierarchy-initiate",
+          "labelKey": "BLK_BHCI",
+          "order": "1012"
+        }
+      ],
+      "icon": "",
+      "order": "1097"
+    },
+    {
+      "moduleCode": "GACCSTAT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/loadAccount_input.action",
+          "labelKey": "RPT_GAS",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "121"
+    },
+    {
+      "moduleCode": "UMS_APPROVALS",
+      "subMenus": [
+        {
+          "viewUrl": "usermanagementui/#/user-approval",
+          "labelKey": "UMS_APPROVALS",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "10000005"
+    },
+    {
+      "moduleCode": "SUBSCRIBER",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/notificationReg_inputDetails.action",
+          "labelKey": "NOTIFREG",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/party/addBlackList_input.action",
+          "labelKey": "BLK_ABL",
+          "order": "100"
+        }
+      ],
+      "icon": "",
+      "order": "24"
+    },
+    {
+      "moduleCode": "BMASTER",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/utility/bulkprofiledownload_input.action",
+          "labelKey": "BULK_PROFILE",
+          "order": "100006"
+        }
+      ],
+      "icon": "",
+      "order": "10000001"
+    },
+    {
+      "moduleCode": "MCHENQ",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/stock/o2cEnq_input.action?serviceType=O2C",
+          "labelKey": "O2CENQ01",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "7"
+    },
+    {
+      "moduleCode": "CHUMGMT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/channel/hryMoveCH_loadHierarchyBranchMovePage.action",
+          "labelKey": "HRY_MOV",
+          "order": "13"
+        }
+      ],
+      "icon": "",
+      "order": "0"
+    },
+    {
+      "moduleCode": "BNKACCLINK",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/bankAdd_searchUserForAccountReg.action",
+          "labelKey": "BANK_ACC_REG",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/party/bankAdd_searchUserForAccountDeReg.action",
+          "labelKey": "BANK_ACC_DREG",
+          "order": "3"
+        }
+      ],
+      "icon": "",
+      "order": "9999999"
+    },
+    {
+      "moduleCode": "AMBGTXN",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/ambiguousTransaction_input.action",
+          "labelKey": "AMBGTXN_UPLOAD",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "10002"
+    },
+    {
+      "moduleCode": "GL",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/GL/CreateGLGroupAction_initiation.action",
+          "labelKey": "GL_INIT",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "6657"
+    },
+    {
+      "moduleCode": "UTIL",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/utility/deleteBillerVal_input.action?requestType=SI",
+          "labelKey": "UTL_CDVAL",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/notification/notification_input.action",
+          "labelKey": "NOTF",
+          "order": "12"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/manualUpload_inputBulkUpload.action",
+          "labelKey": "BILL_UP",
+          "order": "13"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/addBillerValAppr_input.action?requestType=AI",
+          "labelKey": "UTL_CBVALA",
+          "order": "16"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/delBillerValAppr_input.action?requestType=DI",
+          "labelKey": "UTL_CBVALD",
+          "order": "17"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/modifyBillerValAppr_input.action?requestType=UI",
+          "labelKey": "UTL_CBVALU",
+          "order": "18"
+        }
+      ],
+      "icon": "",
+      "order": "40"
+    },
+    {
+      "moduleCode": "ENQUIRY",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/userEnquiry/userEnquir_inputUser.action",
+          "labelKey": "ENQ_US",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/mmoney/sendReset_input.action",
+          "labelKey": "SR_PIN01",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/channel/txnAction_input.action",
+          "labelKey": "TXN_DETAILS",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/userEnquiry/userLoyaltyEnquiry_inputUserForLoyalty.action",
+          "labelKey": "ENQ_LUS",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/userEnquiry/cce_launch.action",
+          "labelKey": "CCE_ENQUIRY",
+          "order": "6"
+        }
+      ],
+      "icon": "",
+      "order": "73"
+    },
+    {
+      "moduleCode": "IDTXNCRT",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/walletinstance/identicalTxnCriteria_input.action",
+          "labelKey": "IDENT_TXN_CRT",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "1012"
+    },
+    {
+      "moduleCode": "SERVCHARG",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/servprofile/confirmAdd_addDetails.action",
+          "labelKey": "SVC_ADD",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/confirmModify_modifyDetails.action",
+          "labelKey": "SVC_MOD",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/confirmView_viewDetails.action",
+          "labelKey": "SVC_VIEW",
+          "order": "3"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/suspend_loadServiceChargeProfileForSuspendResume.action",
+          "labelKey": "SVC_SUS",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/profile_loadCalculator.action?reqType=calculator",
+          "labelKey": "SVC_CALC",
+          "order": "5"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/profileApp_viewApprovalDetails.action",
+          "labelKey": "SVC_APP",
+          "order": "6"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/subsComRule_modifySubsCommssionRule.action",
+          "labelKey": "SVC_SUBCOM",
+          "order": "7"
+        },
+        {
+          "viewUrl": "CoreWeb/servprofile/addSubsComRule_addSubsCommRule.action",
+          "labelKey": "SVC_ADDSUBCOM",
+          "order": "8"
+        }
+      ],
+      "icon": "",
+      "order": "34"
+    },
+    {
+      "moduleCode": "SVATOBANAC",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/utility/svaToOwnBank_input.action",
+          "labelKey": "SVATO_BANKAC",
+          "order": "311"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/scheduledTransfer_displayScheduleTxnList.action",
+          "labelKey": "VSDM_SVA",
+          "order": "312"
+        },
+        {
+          "viewUrl": "CoreWeb/utility/resumeScheduledTransfer_resumeScheduleTxnList.action",
+          "labelKey": "SVA_RESUME",
+          "order": "313"
+        }
+      ],
+      "icon": "",
+      "order": "287"
+    },
+    {
+      "moduleCode": "PROMOTION",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/promotion/create_view.action",
+          "labelKey": "VIEW_PRO",
+          "order": "4"
+        },
+        {
+          "viewUrl": "CoreWeb/promotion/reconciliation_input.action",
+          "labelKey": "RECON_PRODM",
+          "order": "19"
+        }
+      ],
+      "icon": "",
+      "order": "503"
+    },
+    {
+      "moduleCode": "BULK_NFIN",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=nonFinancial&actionPage=upload",
+          "labelKey": "BULK_NON_FINANCIAL",
+          "order": "100003"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=nonFinancial&actionPage=requests&approvalLevel=1",
+          "labelKey": "NEW_BULK_NF_APPROVE",
+          "order": "100004"
+        },
+        {
+          "viewUrl": "CoreWeb/bulkprocessing/bulk.action?type=nonFinancial&actionPage=dashboard&approvalLevel=0",
+          "labelKey": "BULK_NF_DASHBOARD",
+          "order": "100005"
+        }
+      ],
+      "icon": "",
+      "order": "10000000"
+    },
+    {
+      "moduleCode": "SERVCLASS",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/party/svcClass_createNewService.action",
+          "labelKey": "SERVCLASS_ADDDM",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "9993398"
+    },
+    {
+      "moduleCode": "UMS_SECURITY",
+      "subMenus": [
+        {
+          "viewUrl": "securityprofileui/#/security-profile",
+          "labelKey": "UMS_SECURITY_PROFILE",
+          "order": "1"
+        },
+        {
+          "viewUrl": "securityprofileui/#/security-question",
+          "labelKey": "UMS_SECURITY_QUESTION",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "10000006"
+    },
+    {
+      "moduleCode": "CATCHAAPR",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/channel/deletecategoryapproval_loadapprovalrecords.action",
+          "labelKey": "DELETE_CAT_APPR",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/channel/modifycategoryapproval_loadapprovalrecords.action",
+          "labelKey": "UPDATE_CAT_APPR",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "282"
+    },
+    {
+      "moduleCode": "TRANSUNREG",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/transferToUnreg/transferToUnregistered_input.action",
+          "labelKey": "TRANSFER_UNREG",
+          "order": "1"
+        }
+      ],
+      "icon": "",
+      "order": "1099"
+    },
+    {
+      "moduleCode": "AUDITTRAIL",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/audit/auditTrail_input.action",
+          "labelKey": "AUD_TRAIL",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/audit/adminTrail_input.action",
+          "labelKey": "ADM_TRAIL",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "45"
+    },
+    {
+      "moduleCode": "TXN_CORR",
+      "subMenus": [
+        {
+          "viewUrl": "CoreWeb/channel/txnCorrection_input.action",
+          "labelKey": "TXN_CORRECTION",
+          "order": "1"
+        },
+        {
+          "viewUrl": "CoreWeb/channel/txnCorrectionApp_input.action",
+          "labelKey": "TXN_CORRAPP",
+          "order": "2"
+        },
+        {
+          "viewUrl": "CoreWeb/channel/crDrTxnCorrection_input.action",
+          "labelKey": "CR_DR_TXN_CORR",
+          "order": "3"
+        }
+      ],
+      "icon": "",
+      "order": "113"
+    },
+    {
+      "moduleCode": "SESSION_MANAGEMENT",
+      "subMenus": [
+        {
+          "viewUrl": "sessionmanagementui/#/my-sessions",
+          "labelKey": "MY_SESSIONS",
+          "order": "1"
+        },
+        {
+          "viewUrl": "sessionmanagementui/#/all-sessions",
+          "labelKey": "ALL_SESSIONS",
+          "order": "2"
+        }
+      ],
+      "icon": "",
+      "order": "10000007"
+    }
+  ],
+  "serviceFlow": "GET_MENUS",
+  "transactionTimeStamp": "2021-02-10T13:11:02",
+  "originalServiceRequestId": "a33c0124-a50c-4c18-b4cd-3d2661564975",
+  "status": "SUCCEEDED"
+}

@@ -1,0 +1,20 @@
+{
+  "regulatoryProfiles": [
+    {
+      "code": "NO_KYC",
+      "name": "No KYC"
+    },
+    {
+      "code": "SUB_INI_USSD",
+      "name": "Subscriber Initiated USSD"
+    },
+    {
+      "code": "FULL_KYC",
+      "name": "Full KYC"
+    },
+    {
+      "code": "PARTIAL_KYC",
+      "name": "Partial KYC"
+    }
+  ]
+}
