@@ -1,10 +1,10 @@
 {
-  "name": "authorization-profile",
+  "name": "authorization-service",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href authorization-profile --prod",
+    "build": "ng build --base-href authorization-service --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
