@@ -12,16 +12,17 @@
     <p-divider layout="vertical"></p-divider>
     <div class="col-5">
       <div class="row" style="padding-bottom: 1em;">Set Service Preferences</div>
-      <div class="row">Channels Allowed</div>
-      <div class="row">
-        <div class="col-2 font-bold-12" *ngFor="let c of channels">
-          <div class="p-field-checkbox">
-            <p-checkbox name="group1" value="{{c.code}}" inputId="{{c.code}}"></p-checkbox>
-            <label> {{c.name}}</label>
+      <div *ngIf="channels.length>0">
+        <div class="row">Channels Allowed</div>
+        <div class="row">
+          <div class="col-2 font-bold-12" *ngFor="let c of channels">
+            <div class="p-field-checkbox">
+              <p-checkbox name="group1" value="{{c.code}}" inputId="{{c.code}}"></p-checkbox>
+              <label> {{c.name}}</label>
+            </div>
           </div>
         </div>
       </div>
-
       <div *ngIf="workspaceDetails.length>0">
         <p-divider></p-divider>
         <div class="row">Users Allowed</div>

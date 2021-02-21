@@ -16,7 +16,7 @@ export class AuthorizationComponent implements OnInit {
   public privileges: Privilege[];
   public channels: Attribute[];
   public levels: Attribute[];
-  public workspaceDetails: WorkspaceDetails[] = []
+  public workspaceDetails: WorkspaceDetails[] = [];
   selectedModule: Module | any;
   selectedPrivilege: Privilege | any;
 
@@ -35,23 +35,28 @@ export class AuthorizationComponent implements OnInit {
     })
   }
 
-  displayService(event:Event) {
+  displayService(event: Event) {
     this.selectedModule = event;
-    this.privileges = this.selectedModule.privileges
+    this.privileges = this.selectedModule.privileges;
     this.resetServiceDetails();
   }
 
   resetServiceDetails() {
     this.workspaceDetails = [];
     this.levels = [];
+    this.channels =[];
   }
 
-  displayServiceDetails(event:Event) {
-    this.selectedPrivilege = event
-    if (this.channels.length === 0) {
-      this.remoteService.loadChannel().subscribe(resp => {
-        this.channels = resp.channels;
-      })
+  displayServiceDetails(event: Event) {
+    this.selectedPrivilege = event;
+    if (this.selectedPrivilege) {
+      if (this.channels.length === 0) {
+        this.remoteService.loadChannel().subscribe(resp => {
+          this.channels = resp.channels;
+        });
+      }
+    } else {
+      this.channels = [];
     }
 
 
