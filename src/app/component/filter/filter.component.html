@@ -2,7 +2,12 @@
   <p-overlayPanel #op [dismissable]="false" [showCloseIcon]="false" [style]="{width: '800px'}">
     <div class="row">
       <div class="col-11 font-bold">Category</div>
-      <div class="col-1 font-bold"><i class="pi pi-times" (click)="op.hide()"></i></div>
+      <div class="col-1 font-bold">
+        <button type="button" class="close" aria-label="Close" (click)="op.hide()" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
     </div>
 
     <div class="row" *ngFor="let workspace of workspaceCategoryDetails"
