@@ -1,5 +1,5 @@
 export interface AuthorizationProfileList {
-  authorizationProfiles: AuthorizationProfile[]
+  authorizationProfiles: AuthorizationProfile[];
 }
 
 export interface AuthorizationProfile {
