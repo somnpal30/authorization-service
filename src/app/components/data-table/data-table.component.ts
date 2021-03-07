@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {RemoteDataService} from "../../service/remote-data.service";
-import {AuthorizationProfile} from "../../model/authorizationProfileList";
+import {AuthorizationProfile} from '../../shared/model/authorizationProfileList';
+import {RemoteDataService} from '../../shared/service/remote-data.service';
+
 
 @Component({
   selector: 'app-data-table',
@@ -19,13 +20,14 @@ export class DataTableComponent implements OnInit {
       this.authorizationProfiles = resp.authorizationProfiles;
       //console.log(this.authorizationProfiles);
     }, error => {
-    })
+    });
   }
 
-  onRowSelect(eve : Event){
-    console.log(eve)
+  onRowSelect(eve: Event) {
+    console.log(eve);
   }
-  onRowUnselect(eve : Event){
+
+  onRowUnselect(eve: Event) {
 
   }
 

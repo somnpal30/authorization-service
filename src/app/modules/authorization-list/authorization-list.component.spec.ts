@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddProfileComponent } from './add-profile.component';
+import { AuthorizationListComponent } from './authorization-list.component';
 
-describe('AddProfileComponent', () => {
-  let component: AddProfileComponent;
-  let fixture: ComponentFixture<AddProfileComponent>;
+describe('AuthorizationListComponent', () => {
+  let component: AuthorizationListComponent;
+  let fixture: ComponentFixture<AuthorizationListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddProfileComponent ]
+      declarations: [ AuthorizationListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddProfileComponent);
+    fixture = TestBed.createComponent(AuthorizationListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

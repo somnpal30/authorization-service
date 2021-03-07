@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {RemoteDataService} from "../../service/remote-data.service";
-import {Module, ModuleAndServices, Privilege} from "../../model/moduleAndServices";
-import {Attribute} from "../../model/serviceDetails";
-import {WorkspaceDetails} from "../../model/workspace";
+import {Module, ModuleAndServices, Privilege} from '../../shared/model/moduleAndServices';
+
+import {WorkspaceDetails} from '../../shared/model/workspace';
+import {RemoteDataService} from '../../shared/service/remote-data.service';
+import {Attribute} from '../../shared/model/serviceDetails';
 
 @Component({
   selector: 'app-authorization',

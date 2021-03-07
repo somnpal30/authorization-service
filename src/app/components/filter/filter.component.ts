@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {RemoteDataService} from "../../service/remote-data.service";
-import {WorkspaceDetails} from "../../model/workspace";
+import { Component, OnInit } from '@angular/core';
+import {WorkspaceDetails} from '../../shared/model/workspace';
+import {RemoteDataService} from '../../shared/service/remote-data.service';
 
 @Component({
   selector: 'app-filter',
