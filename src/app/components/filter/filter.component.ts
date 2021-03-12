@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WorkspaceDetails} from '../../shared/model/workspace';
 import {RemoteDataService} from '../../shared/service/remote-data.service';
+import {Store} from '@ngrx/store';
+import {AuthorizationState} from '../../store/reducers/authorization-reducer.reducer';
+import {getWorkspace} from '../../store/selectors/authorization.selector';
 
 @Component({
   selector: 'app-filter',
@@ -9,29 +12,21 @@ import {RemoteDataService} from '../../shared/service/remote-data.service';
 })
 export class FilterComponent implements OnInit {
 
-  workspaceCategoryDetails: WorkspaceDetails[] = [];
-  selectedValues: string[]= [] ;
-  appliedFilterValues :  string[]= [] ;
-  badgeCounter:number = 0
-  constructor(private remoteService: RemoteDataService) {
+  workspaceCategoryDetails: WorkspaceDetails[] | undefined;
+  selectedValues: string[] = [];
+  appliedFilterValues: string[] = [];
+  badgeCounter: number = 0;
+
+  constructor(private remoteService: RemoteDataService, private store: Store<AuthorizationState>) {
   }
 
   ngOnInit(): void {
-
-    this.remoteService.loadWorkspace().subscribe(
-      resp => {
-        //console.log(resp)
-        this.workspaceCategoryDetails = resp?.workspaceCategoryDetails.sort( (o1,o2) => (o1.workspaceName > o2.workspaceName ? 1: -1) );
-      },
-      error => {
-        console.error(error)
-      }
-    );
+    this.store.select(getWorkspace).subscribe(resp => this.workspaceCategoryDetails = resp?.workspaceCategoryDetails);
   }
 
-  traceClick(){
+  traceClick() {
     //console.log(val);
-    console.log(this.selectedValues)
+    console.log(this.selectedValues);
   }
 
   clearFilter() {
@@ -44,7 +39,6 @@ export class FilterComponent implements OnInit {
     this.badgeCounter = this.selectedValues.length;
     this.appliedFilterValues = [...this.selectedValues];
   }
-  showSelectedValue() {
-    this.selectedValues = [...this.appliedFilterValues];
-  }
+
+
 }

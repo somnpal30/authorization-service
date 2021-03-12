@@ -33,9 +33,12 @@ body {
 }
 
 .btn-grey {
-  color: #7A7A7A !important;
+  color: #F02 !important;
   border-color:  #FBFBFB !important;
   background-color: #FBFBFB !important;
+  font-family: 'Nunito Sans' !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
   /*width: 100px !important;*/
 
 }
