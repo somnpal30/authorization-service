@@ -10,26 +10,12 @@ export class AuthenticationEffect {
   constructor(private actions$: Actions, private remoteService: RemoteDataService) {
   }
 
-  /*  loadUserTypes$ = createEffect(() => {
-      return this.actions$.pipe(
-        ofType(loadUsersType),
-        concatMap((action) =>
-          this.remoteDataService.loadWorkspace().pipe(map(workspace => {
-            console.log('log 1 : ', workspace);
-            return allUserLoaded({workspace});
-          }))
-        )
-      );
-    });*/
-
   getUserTypes$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadUsersType),
       concatMap((action) => {
-        //console.log(action)
         return this.remoteService.loadWorkspace().pipe(
           map((data) => {
-            //console.log(data);
             return allUserLoaded({workspace: data});
           })
         );

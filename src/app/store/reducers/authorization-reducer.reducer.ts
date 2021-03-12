@@ -16,8 +16,6 @@ export const initialState: AuthorizationState = {
 export const authorizationReducer = createReducer(
   initialState,
   on(AuthorizationAction.allUserLoaded, (state, action) => {
-    console.log(state.workspace);
-    console.log(action.workspace);
     return {
       ...state,
       workspace: action.workspace
