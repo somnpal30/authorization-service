@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {Store} from '@ngrx/store';
-import {AppStore} from './appStore';
+import {select, Store} from '@ngrx/store';
+import {AppStore} from '../appStore';
 import {finalize, first, tap} from 'rxjs/operators';
-import {loadUsersType} from './actions/authorization.action';
+import {loadUsersType} from '../actions/authorization.action';
+import {isWorkspaceLoaded} from '../selectors/authorization.selector';
 
 
 @Injectable()
@@ -17,8 +18,10 @@ export class AuthorizationResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
     return this.store.pipe(
-      tap(() => {
-        if (!this.loading) {
+      select(isWorkspaceLoaded),
+      tap((workspaceLoaded) => {
+        console.log('workspaceLoaded ', workspaceLoaded);
+        if (!this.loading && !workspaceLoaded) {
           this.loading = true;
           this.store.dispatch(loadUsersType());
         }

@@ -6,10 +6,12 @@ export const authorizationReducerFeatureKey = 'authorizationReducer';
 
 export interface AuthorizationState {
   workspaces: WorkspaceDetails[];
+  isWorkspaceLoaded: boolean
 }
 
 export const initialState: AuthorizationState = {
-  workspaces: []
+  workspaces: [],
+  isWorkspaceLoaded: false
 };
 
 
@@ -18,7 +20,8 @@ export const authorizationReducer = createReducer(
   on(AuthorizationAction.allUserLoaded, (state, action) => {
     return {
       ...state,
-      workspaces: action.workspaces
+      workspaces: action.workspaces,
+      isWorkspaceLoaded: action.isWorkspaceLoaded
     };
   })
 );
