@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {WorkspaceDetails} from '../../shared/model/workspace';
-import {RemoteDataService} from '../../shared/service/remote-data.service';
 import {Store} from '@ngrx/store';
 import {AuthorizationState} from '../../store/reducers/authorization-reducer.reducer';
 import {getWorkspace} from '../../store/selectors/authorization.selector';
@@ -17,11 +16,14 @@ export class FilterComponent implements OnInit {
   appliedFilterValues: string[] = [];
   badgeCounter: number = 0;
 
-  constructor(private remoteService: RemoteDataService, private store: Store<AuthorizationState>) {
+  constructor(private store: Store<AuthorizationState>) {
   }
 
   ngOnInit(): void {
-    this.store.select(getWorkspace).subscribe(resp => this.workspaceCategoryDetails = resp?.workspaceCategoryDetails);
+    this.store.select(getWorkspace).subscribe(resp => {
+
+      this.workspaceCategoryDetails = resp;
+    });
   }
 
   traceClick() {

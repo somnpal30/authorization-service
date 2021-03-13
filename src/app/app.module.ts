@@ -13,6 +13,7 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {authorizationReducer} from './store/reducers/authorization-reducer.reducer';
 import {AuthenticationEffect} from './store/effects/authentication.effect';
+import {AuthorizationResolver} from './store/authorization.resolver';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {AuthenticationEffect} from './store/effects/authentication.effect';
 
 
   ],
-  providers: [],
+  providers: [AuthorizationResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {

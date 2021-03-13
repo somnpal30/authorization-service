@@ -1,15 +1,15 @@
 import {createReducer, on} from '@ngrx/store';
-import {Workspace} from '../../shared/model/workspace';
+import {WorkspaceDetails} from '../../shared/model/workspace';
 import * as AuthorizationAction from '../../store/actions/authorization.action';
 
 export const authorizationReducerFeatureKey = 'authorizationReducer';
 
 export interface AuthorizationState {
-  workspace: Workspace | undefined;
+  workspaces: WorkspaceDetails[];
 }
 
 export const initialState: AuthorizationState = {
-  workspace: undefined
+  workspaces: []
 };
 
 
@@ -18,7 +18,7 @@ export const authorizationReducer = createReducer(
   on(AuthorizationAction.allUserLoaded, (state, action) => {
     return {
       ...state,
-      workspace: action.workspace
+      workspaces: action.workspaces
     };
   })
 );

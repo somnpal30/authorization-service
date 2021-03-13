@@ -14,9 +14,9 @@ export class AuthenticationEffect {
     return this.actions$.pipe(
       ofType(loadUsersType),
       concatMap((action) => {
-        return this.remoteService.loadWorkspace().pipe(
+        return this.remoteService.loadWorkspaces().pipe(
           map((data) => {
-            return allUserLoaded({workspace: data});
+            return allUserLoaded({workspaces: data});
           })
         );
       })
