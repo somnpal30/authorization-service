@@ -2,7 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Workspace, WorkspaceDetails} from '../model/workspace';
 import {Observable} from 'rxjs';
-import {AuthorizationProfileList} from '../model/authorizationProfileList';
+import {AuthorizationProfile, AuthorizationProfileList} from '../model/authorizationProfileList';
 import {ModuleAndServices} from '../model/moduleAndServices';
 import {ServiceDetails} from '../model/serviceDetails';
 import {map} from 'rxjs/operators';
@@ -27,6 +27,10 @@ export class RemoteDataService implements OnInit {
 
   loadAuthorizationProfileList(): Observable<AuthorizationProfileList> {
     return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json');
+  }
+  loadAuthorizationProfiles(): Observable<AuthorizationProfile[]> {
+    return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json')
+      .pipe(map(resp => resp.authorizationProfiles));
   }
 
   loadModuleAndServiceDetails(): Observable<ModuleAndServices> {
