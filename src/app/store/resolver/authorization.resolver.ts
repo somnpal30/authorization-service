@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
 import {select, Store} from '@ngrx/store';
-
+import {AppStore} from '../appStore';
 import {finalize, first, tap} from 'rxjs/operators';
 import {loadUsersType} from '../actions/authorization.action';
 import {isWorkspaceLoaded} from '../selectors/authorization.selector';
@@ -13,7 +13,7 @@ export class AuthorizationResolver implements Resolve<any> {
 
   loading = false;
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<AppStore>) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
@@ -30,7 +30,7 @@ export class AuthorizationResolver implements Resolve<any> {
       first(),
       finalize(() => {
         this.loading = false;
-        //console.log('finalize');
+        console.log('finalize');
       })
     );
   }

@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthorizationProfile} from '../../shared/model/authorizationProfileList';
-import {Store} from '@ngrx/store';
-import {AuthorizationListState} from '../../store/appStore';
-import {getAuthorizationList} from '../../store/selectors/authorization.selector';
+import {RemoteDataService} from '../../shared/service/remote-data.service';
 
 
 @Component({
@@ -14,18 +12,15 @@ export class DataTableComponent implements OnInit {
 
   authorizationProfiles: AuthorizationProfile[] = [];
 
-  constructor(private store: Store<AuthorizationListState>) {
-
+  constructor(private remoteService: RemoteDataService) {
   }
 
   ngOnInit(): void {
-
-    //this.store.dispatch(initializeLoadAuthzList());
-    this.store.select(getAuthorizationList).subscribe(resp => {
-     // console.log("data table ",resp)
-      this.authorizationProfiles = resp;
+    this.remoteService.loadAuthorizationProfileList().subscribe(resp => {
+      this.authorizationProfiles = resp.authorizationProfiles;
+      //console.log(this.authorizationProfiles);
+    }, error => {
     });
-
   }
 
   onRowSelect(eve: Event) {
@@ -35,6 +30,5 @@ export class DataTableComponent implements OnInit {
   onRowUnselect(eve: Event) {
 
   }
-
 
 }

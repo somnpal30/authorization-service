@@ -1,9 +1,8 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AuthorizationListState, AuthorizationState} from '../appStore';
+import {AuthorizationState} from '../reducers/authorization-reducer.reducer';
 
 
 const getAuthState = createFeatureSelector<AuthorizationState>('users');
-const getAuthListState = createFeatureSelector<AuthorizationListState>('authzList');
 
 export const getWorkspace = createSelector(getAuthState, state => {
   return state.workspaces;
@@ -11,8 +10,4 @@ export const getWorkspace = createSelector(getAuthState, state => {
 
 export const isWorkspaceLoaded = createSelector(getAuthState, state => {
   return state.isWorkspaceLoaded;
-});
-
-export const getAuthorizationList = createSelector(getAuthListState, state => {
-  return state.authorizationProfiles;
 });
