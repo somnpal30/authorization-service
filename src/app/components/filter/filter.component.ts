@@ -3,7 +3,8 @@ import {WorkspaceDetails} from '../../shared/model/workspace';
 import {Store} from '@ngrx/store';
 
 import {getWorkspace} from '../../store/selectors/authorization.selector';
-import {AuthorizationState} from '../../store/appStore';
+import {AuthorizationState} from '../../store/states/authroization.state';
+
 
 @Component({
   selector: 'app-filter',

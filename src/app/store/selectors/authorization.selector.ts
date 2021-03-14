@@ -1,5 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AuthorizationState} from '../appStore';
+import {AuthorizationState} from '../states/authroization.state';
+
 
 
 

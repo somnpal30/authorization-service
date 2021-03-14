@@ -11,9 +11,9 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
-import {authorizationReducer} from './store/reducers/authorization-reducer.reducer';
 import {AuthorizationEffect} from './store/effects/authorization.effect';
 import {AuthorizationResolver} from './store/resolver/authorization.resolver';
+import {applicationReducer} from './store/application.state';
 
 
 @NgModule({
@@ -27,10 +27,7 @@ import {AuthorizationResolver} from './store/resolver/authorization.resolver';
     BrowserAnimationsModule,
     AppRoutingModule,
     EntityDataModule.forRoot(entityConfig),
-    // StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot({
-      users: authorizationReducer
-    }, {}),
+    StoreModule.forRoot(applicationReducer),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([
       AuthorizationEffect

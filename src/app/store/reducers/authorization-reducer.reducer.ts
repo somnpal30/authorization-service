@@ -1,12 +1,13 @@
 import {createReducer, on} from '@ngrx/store';
 import * as AuthorizationAction from '../../store/actions/authorization.action';
-import {initialState} from '../appStore';
+import {initialAuthorizationState} from '../states/authroization.state';
+
 
 export const authorizationReducerFeatureKey = 'authorizationReducer';
 
 
 export const authorizationReducer = createReducer(
-  initialState,
+  initialAuthorizationState,
   on(AuthorizationAction.allUserLoaded, (state, action) => {
     return {
       ...state,
