@@ -1,16 +1,8 @@
 import {createReducer, on} from '@ngrx/store';
-import {WorkspaceDetails} from '../../shared/model/workspace';
 import * as AuthorizationAction from '../../store/actions/authorization.action';
+import {initialState} from '../appStore';
 
 export const authorizationReducerFeatureKey = 'authorizationReducer';
-
-export interface AuthorizationState {
-  workspaces: WorkspaceDetails[];
-}
-
-export const initialState: AuthorizationState = {
-  workspaces: []
-};
 
 
 export const authorizationReducer = createReducer(

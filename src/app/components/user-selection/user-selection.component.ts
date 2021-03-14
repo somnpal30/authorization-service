@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Category, WorkspaceDetails} from '../../shared/model/workspace';
 import {Store} from '@ngrx/store';
-import {AuthorizationState} from '../../store/reducers/authorization-reducer.reducer';
+
 import {getWorkspace} from '../../store/selectors/authorization.selector';
+import {AuthorizationState} from '../../store/appStore';
 
 
 @Component({

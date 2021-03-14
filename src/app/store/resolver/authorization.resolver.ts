@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {AppStore} from './appStore';
+
 import {finalize, first, tap} from 'rxjs/operators';
-import {loadUsersType} from './actions/authorization.action';
+import {loadUsersType} from '../actions/authorization.action';
 
 
 @Injectable()
@@ -12,7 +12,7 @@ export class AuthorizationResolver implements Resolve<any> {
 
   loading = false;
 
-  constructor(private store: Store<AppStore>) {
+  constructor(private store: Store<any>) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {

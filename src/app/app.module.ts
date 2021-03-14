@@ -12,8 +12,8 @@ import {environment} from '../environments/environment';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {authorizationReducer} from './store/reducers/authorization-reducer.reducer';
-import {AuthenticationEffect} from './store/effects/authentication.effect';
-import {AuthorizationResolver} from './store/authorization.resolver';
+import {AuthorizationEffect} from './store/effects/authorization.effect';
+import {AuthorizationResolver} from './store/resolver/authorization.resolver';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import {AuthorizationResolver} from './store/authorization.resolver';
     }, {}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([
-      AuthenticationEffect
+      AuthorizationEffect
     ]),
 
 

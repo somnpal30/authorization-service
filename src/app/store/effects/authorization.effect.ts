@@ -5,7 +5,7 @@ import {allUserLoaded, loadUsersType} from '../actions/authorization.action';
 import {concatMap, map} from 'rxjs/operators';
 
 @Injectable()
-export class AuthenticationEffect {
+export class AuthorizationEffect {
 
   constructor(private actions$: Actions, private remoteService: RemoteDataService) {
   }
