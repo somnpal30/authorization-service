@@ -10,7 +10,8 @@ export const authorizationReducer = createReducer(
   on(AuthorizationAction.allUserLoaded, (state, action) => {
     return {
       ...state,
-      workspaces: action.workspaces
+      workspaces: action.workspaces,
+      loaded: action.loaded
     };
   })
 );

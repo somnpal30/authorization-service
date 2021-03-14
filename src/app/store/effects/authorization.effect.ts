@@ -16,7 +16,7 @@ export class AuthorizationEffect {
       concatMap((action) => {
         return this.remoteService.loadWorkspaces().pipe(
           map((data) => {
-            return allUserLoaded({workspaces: data});
+            return allUserLoaded({workspaces: data, loaded: true});
           })
         );
       })
