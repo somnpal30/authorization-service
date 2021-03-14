@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthorizationProfileComponent} from './authorization-profile.component';
-import {AuthorizationResolver} from '../../store/resolver/authorization.resolver';
+import {AuthorizationResolver} from '../../store/authorization.resolver';
 
 const routes: Routes = [
   {

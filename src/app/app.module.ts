@@ -13,7 +13,7 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {authorizationReducer} from './store/reducers/authorization-reducer.reducer';
 import {AuthenticationEffect} from './store/effects/authentication.effect';
-import {AuthorizationResolver} from './store/resolver/authorization.resolver';
+import {AuthorizationResolver} from './store/authorization.resolver';
 
 
 @NgModule({
