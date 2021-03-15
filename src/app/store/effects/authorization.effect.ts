@@ -1,8 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {RemoteDataService} from '../../shared/service/remote-data.service';
-import {allUserLoaded, loadUsersType} from '../actions/authorization.action';
-import {concatMap, map} from 'rxjs/operators';
+import {
+  allUserLoaded,
+  authorizationProfilesLoaded,
+  initializeLoadAuthorizationProfiles,
+  loadUsersType
+} from '../actions/authorization.action';
+import {concatMap, exhaustMap, map} from 'rxjs/operators';
 
 @Injectable()
 export class AuthorizationEffect {
@@ -11,9 +16,10 @@ export class AuthorizationEffect {
   }
 
   getUserTypes$ = createEffect(() => {
+    console.log("1")
     return this.actions$.pipe(
       ofType(loadUsersType),
-      concatMap((action) => {
+      concatMap(() => {
         return this.remoteService.loadWorkspaces().pipe(
           map((data) => {
             return allUserLoaded({workspaces: data, loaded: true});
@@ -22,5 +28,17 @@ export class AuthorizationEffect {
       })
     );
   });
-
+  getAuthorizationList$ = createEffect(() => {
+    console.log('2');
+    return this.actions$.pipe(
+      ofType(initializeLoadAuthorizationProfiles),
+      exhaustMap(() => {
+        return this.remoteService.loadAuthorizationProfiles().pipe(
+          map((data) => {
+            return authorizationProfilesLoaded({authorizationProfiles: data});
+          })
+        );
+      })
+    );
+  });
 }

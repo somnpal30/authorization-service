@@ -3,7 +3,7 @@ import {WorkspaceDetails} from '../../shared/model/workspace';
 import {Store} from '@ngrx/store';
 
 import {getWorkspace} from '../../store/selectors/authorization.selector';
-import {AuthorizationState} from '../../store/states/authroization.state';
+import {ApplicationState} from '../../store/application.state';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class FilterComponent implements OnInit {
   appliedFilterValues: string[] = [];
   badgeCounter: number = 0;
 
-  constructor(private store: Store<AuthorizationState>) {
+  constructor(private store: Store<any>) {
   }
 
   ngOnInit(): void {
@@ -44,5 +44,8 @@ export class FilterComponent implements OnInit {
     this.appliedFilterValues = [...this.selectedValues];
   }
 
+  fetchRecords(){
+    //this.store.dispatch(initializeLoadAuthzListAction());
+  }
 
 }

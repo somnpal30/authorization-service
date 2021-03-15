@@ -6,6 +6,7 @@
         <button type="button" class="close" aria-label="Close" (click)="op.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
+
       </div>
 
     </div>
@@ -35,5 +36,5 @@
 
   <p-button styleClass="btn-filter font-bold" label="Filters" icon="pi pi-filter" badge="{{badgeCounter}}"
             badgeClass="p-badge-info"
-            (click)="op.show($event);"></p-button>
+            (click)="op.show($event); fetchRecords()"></p-button>
 </div>

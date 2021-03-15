@@ -13,9 +13,12 @@ import {DataTableComponent} from '../../components/data-table/data-table.compone
   imports: [
     CommonModule,
     AuthorizationListRoutingModule,
-    UiModule
+    UiModule,
+
   ],
   providers: []
 })
 export class AuthorizationListModule {
+
+
 }

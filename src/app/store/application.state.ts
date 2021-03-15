@@ -1,14 +1,15 @@
 import {AuthorizationState} from './states/authroization.state';
-import {AuthroizationProfileListState} from './states/authorizationList.state';
+import {AuthorisationProfilesState} from './states/authorizationList.state';
 import {authorizationProfilesReducer, authorizationReducer} from './reducers/authorization-reducer.reducer';
 
 export interface ApplicationState {
   authorizationState: AuthorizationState,
-  authorizationProfileList: AuthroizationProfileListState
+  authorizationProfileList: AuthorisationProfilesState
 }
 
 
 export const applicationReducer = {
   users: authorizationReducer,
-  authorizationProfiles: authorizationProfilesReducer
+  authProfiles: authorizationProfilesReducer,
 };
+
