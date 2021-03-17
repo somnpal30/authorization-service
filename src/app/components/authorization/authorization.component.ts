@@ -13,7 +13,7 @@ import {Attribute} from '../../shared/model/serviceDetails';
 export class AuthorizationComponent implements OnInit {
 
   AttributeType = {
-    user: 'USER', level: 'LEVEL'
+    USER_TYPES: 'USER_TYPES', LEVEL: 'LEVELS', GATEWAY: 'GATEWAY'
   };
 
   public moduleAndServiceCol: ModuleAndServices | any;
@@ -78,9 +78,9 @@ export class AuthorizationComponent implements OnInit {
     } else {
       let map = this.attributesMap.get(this.selectedPrivilege.code);
       map?.forEach(((value, key) => {
-        if (key === this.AttributeType.user) {
+        if (key === this.AttributeType.USER_TYPES) {
           this.selectedUsers = value;
-        } else if (key === this.AttributeType.level) {
+        } else if (key === this.AttributeType.LEVEL) {
           this.selectedLevels = value;
         }
       }));
@@ -99,7 +99,7 @@ export class AuthorizationComponent implements OnInit {
 
 
     this.selectedPrivilege.attributes?.forEach((value: any) => {
-      if ('USER_TYPES' === value) {
+      if (this.AttributeType.USER_TYPES === value) {
         this.remoteService.loadWorkspace().subscribe(
           resp => {
             //console.log(resp)
@@ -115,7 +115,7 @@ export class AuthorizationComponent implements OnInit {
         this.workspaceDetails = [];
       }
 
-      if ('LEVELS' === value) {
+      if (this.AttributeType.LEVEL === value) {
         this.remoteService.loadLevel().subscribe(resp => {
           this.levels = resp.levels;
           //console.log(resp);
@@ -141,9 +141,9 @@ export class AuthorizationComponent implements OnInit {
     }
 
     let map = this.attributesMap.get(this.selectedPrivilege.code);
-    if (type === this.AttributeType.user) {
+    if (type === this.AttributeType.USER_TYPES) {
       map?.set(type, [...this.selectedUsers]);
-    } else if (type === this.AttributeType.level) {
+    } else if (type === this.AttributeType.LEVEL) {
       map?.set(type, [...this.selectedLevels]);
     }
 
