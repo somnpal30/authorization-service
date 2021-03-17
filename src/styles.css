@@ -144,6 +144,10 @@ body .ui-table .ui-table-tbody > tr > td {
 .p-listbox{
   border: 0 !important;
 }
+.list-group-item{
+  padding: 0px !important;
+}
+
 
 .listbox-top {
   border-style:none !important;

@@ -13,19 +13,20 @@ import {AuthorizationEffect} from './store/effects/authorization.effect';
 import {AuthorizationResolver} from './store/resolver/authorization.resolver';
 import {applicationReducer} from './store/application.state';
 import {AuthorizationProfileResolver} from './store/resolver/authorizationProfile.resolver';
-import { ServicePreferenceComponent } from './components/service-preference/service-preference.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServicePreferenceComponent,
+
 
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     StoreModule.forRoot(applicationReducer),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
