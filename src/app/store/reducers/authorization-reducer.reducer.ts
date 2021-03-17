@@ -21,7 +21,7 @@ export const authorizationReducer = createReducer(
 export const authorizationProfilesReducer = createReducer(
   initialAuthroisationProfile,
   on(AuthorizationAction.authorizationProfilesLoaded, (state, action) => {
-    debugger
+    //debugger
     //console.log(state);
     //console.log(action);
     return {

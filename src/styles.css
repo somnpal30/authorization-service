@@ -144,3 +144,37 @@ body .ui-table .ui-table-tbody > tr > td {
 .p-listbox{
   border: 0 !important;
 }
+
+.listbox-top {
+  border-style:none !important;
+  border-radius: 0 !important;
+}
+.listbox-element {
+  border-style:none !important;
+  border-left-style: solid !important;
+  border-left-width: 3px !important;
+  border-left-color: #fff !important;
+  padding-left: 2em;
+}
+.listbox-element:hover {
+  border-left-style: solid !important;
+  border-left-width: 3px !important;
+  border-left-color: #fff !important;
+
+}
+.listbox-element:active {
+  border-left-style: solid !important;
+  border-left-width: 3px !important;
+  border-left-color: #007bff !important;
+
+}
+.listbox-element:focus {
+  border-left-style: solid !important;
+  border-left-width: 3px !important;
+  border-left-color: #007bff !important;
+
+}
+
+
+
+

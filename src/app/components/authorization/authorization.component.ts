@@ -81,7 +81,7 @@ export class AuthorizationComponent implements OnInit {
       if ("LEVELS" === value) {
         this.remoteService.loadLevel().subscribe(resp => {
           this.levels = resp.levels;
-          console.log(resp);
+          //console.log(resp);
         })
       } else {
         this.levels = [];

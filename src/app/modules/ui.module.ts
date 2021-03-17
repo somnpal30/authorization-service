@@ -11,6 +11,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {ListboxModule} from 'primeng/listbox';
 import {AccordionModule} from 'primeng/accordion';
+import {TagModule} from 'primeng/tag';
 
 @NgModule({
   exports: [
@@ -25,7 +26,8 @@ import {AccordionModule} from 'primeng/accordion';
     InputTextModule,
     ScrollPanelModule,
     ListboxModule,
-    AccordionModule
+    AccordionModule,
+    TagModule
   ]
 })
 

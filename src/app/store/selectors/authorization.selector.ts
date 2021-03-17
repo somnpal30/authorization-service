@@ -11,7 +11,7 @@ const getAuthState = createFeatureSelector<AuthorizationState>('users');
 const getAuthProfileState = createFeatureSelector<AuthorisationProfilesState>('authProfiles');
 
 export const getWorkspace = createSelector(getAuthState, state => {
-  debugger
+  //debugger
   console.log('..........', state);
   return state.workspaces;
 });

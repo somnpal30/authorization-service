@@ -12,13 +12,16 @@ export class FilterListComponent implements OnInit {
   @Output() selectedDataEvent = new EventEmitter<any>();
 
   selectedData: any;
+  filterValue :string;
 
   constructor() {
-    this.label = "";
+    this.label = '';
     this.dataCol = [];
+    this.filterValue =''
   }
 
   ngOnInit(): void {
+
   }
 
   displayData() {
