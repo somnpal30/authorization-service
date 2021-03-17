@@ -25,7 +25,7 @@ export class AuthorizationComponent implements OnInit {
   selectedModule: Module | any;
   selectedPrivilege: Privilege | any;
 
-  gatewayMap: Map<string, string[]>;
+  //gatewayMap: Map<string, string[]>;
   attributesMap: Map<string, Map<string, string[]>>;
 
   selectedGateways: string[];
@@ -37,7 +37,7 @@ export class AuthorizationComponent implements OnInit {
     this.channels = [];
     this.levels = [];
 
-    this.gatewayMap = new Map<string, string[]>();
+    //this.gatewayMap = new Map<string, string[]>();
     this.attributesMap = new Map<string, Map<string, string[]>>();
 
     this.selectedGateways = this.selectedUsers = this.selectedLevels = [];
@@ -69,21 +69,28 @@ export class AuthorizationComponent implements OnInit {
     this.selectedPrivilege = event;
     this.selectedGateways = this.selectedLevels = this.selectedUsers = [];
 
-    if (this.gatewayMap.has(this.selectedPrivilege.code)) {
-      this.selectedGateways = this.gatewayMap.get(this.selectedPrivilege.code) || [];
-    }
     if (!this.attributesMap.has(this.selectedPrivilege.code)) {
       this.attributesMap.set(this.selectedPrivilege.code, new Map<string, string[]>());
 
     } else {
       let map = this.attributesMap.get(this.selectedPrivilege.code);
       map?.forEach(((value, key) => {
-        if (key === this.AttributeType.USER_TYPES) {
-          this.selectedUsers = value;
-        } else if (key === this.AttributeType.LEVEL) {
-          this.selectedLevels = value;
-        }
-      }));
+            switch (key) {
+              case  this.AttributeType.USER_TYPES :
+                this.selectedUsers = value;
+                break;
+              case this.AttributeType.LEVEL :
+                this.selectedLevels = value;
+                break;
+              case this.AttributeType.GATEWAY :
+                this.selectedGateways = value;
+                break;
+              default :
+                console.log('NO records available for key : ', key);
+            }
+          }
+        )
+      );
     }
 
 
@@ -127,9 +134,6 @@ export class AuthorizationComponent implements OnInit {
   }
 
 
-  setGateways() {
-    this.gatewayMap.set(this.selectedPrivilege.code, [...this.selectedGateways]);
-  }
 
   setAttribute(type: string) {
     console.log(type);
@@ -139,15 +143,21 @@ export class AuthorizationComponent implements OnInit {
       && this.attributesMap.get(this.selectedPrivilege.code)?.has(type))) {
       this.attributesMap.set(this.selectedPrivilege.code, new Map<string, string[]>().set(type, []));
     }
-
     let map = this.attributesMap.get(this.selectedPrivilege.code);
-    if (type === this.AttributeType.USER_TYPES) {
-      map?.set(type, [...this.selectedUsers]);
-    } else if (type === this.AttributeType.LEVEL) {
-      map?.set(type, [...this.selectedLevels]);
+    switch (type) {
+      case  this.AttributeType.USER_TYPES :
+        map?.set(type, [...this.selectedUsers]);
+        break;
+      case this.AttributeType.LEVEL :
+        map?.set(type, [...this.selectedLevels]);
+        break;
+      case this.AttributeType.GATEWAY :
+        map?.set(type, [...this.selectedGateways]);
+        break;
+      default :
+        console.log('NO type found : ', type);
     }
 
-    console.log(this.attributesMap);
 
   }
 }

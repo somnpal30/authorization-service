@@ -21,7 +21,7 @@
             <div class="p-field-checkbox">
               <p-checkbox name="gateway" value="{{c.code}}" inputId="{{c.code}}"
                           [(ngModel)]="selectedGateways"
-                          (click)="setGateways()">
+                          (click)="setAttribute(AttributeType.GATEWAY)">
               </p-checkbox>
               <label> {{c.name}}</label>
             </div>
