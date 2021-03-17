@@ -24,7 +24,7 @@
         <div class="p-field-checkbox">
           <p-checkbox name="user"
                       value="{{c.categoryId}}" inputId="{{c.categoryId}}"
-                      [(ngModel)]="selectedValues">
+                      [(ngModel)]="selectedValues" (click)="setAttribute()">
           </p-checkbox>
           <label>{{c.categoryName}}</label>
         </div>
