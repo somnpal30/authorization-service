@@ -4,6 +4,7 @@ import {Module, ModuleAndServices, Privilege} from '../../shared/model/moduleAnd
 import {WorkspaceDetails} from '../../shared/model/workspace';
 import {RemoteDataService} from '../../shared/service/remote-data.service';
 import {Attribute} from '../../shared/model/serviceDetails';
+import {ATTRIBUTE_TYPE} from '../../shared/utils/application.util';
 
 @Component({
   selector: 'app-authorization',
@@ -12,22 +13,19 @@ import {Attribute} from '../../shared/model/serviceDetails';
 })
 export class AuthorizationComponent implements OnInit {
 
-  AttributeType = {
-    USER_TYPES: 'USER_TYPES', LEVEL: 'LEVELS', GATEWAY: 'GATEWAY'
-  };
+  attributeType = ATTRIBUTE_TYPE;
 
-  public moduleAndServiceCol: ModuleAndServices | any;
-  public modules: Module[] = [];
-  public privileges: Privilege[];
-  public channels: Attribute[];
-  public levels: Attribute[];
-  public workspaceDetails: WorkspaceDetails[] = [];
+  moduleAndServiceCol: ModuleAndServices | any;
+  modules: Module[] = [];
+  privileges: Privilege[];
+  channels: Attribute[];
+  levels: Attribute[];
+  workspaceDetails: WorkspaceDetails[] = [];
+
   selectedModule: Module | any;
   selectedPrivilege: Privilege | any;
 
-  //gatewayMap: Map<string, string[]>;
   attributesMap: Map<string, Map<string, string[]>>;
-
   selectedGateways: string[];
   selectedUsers: string[];
   selectedLevels: string[];
@@ -76,13 +74,13 @@ export class AuthorizationComponent implements OnInit {
       let map = this.attributesMap.get(this.selectedPrivilege.code);
       map?.forEach(((value, key) => {
             switch (key) {
-              case  this.AttributeType.USER_TYPES :
+              case  this.attributeType.USER_TYPES :
                 this.selectedUsers = value;
                 break;
-              case this.AttributeType.LEVEL :
+              case this.attributeType.LEVEL :
                 this.selectedLevels = value;
                 break;
-              case this.AttributeType.GATEWAY :
+              case this.attributeType.GATEWAY :
                 this.selectedGateways = value;
                 break;
               default :
@@ -106,7 +104,7 @@ export class AuthorizationComponent implements OnInit {
 
 
     this.selectedPrivilege.attributes?.forEach((value: any) => {
-      if (this.AttributeType.USER_TYPES === value) {
+      if (this.attributeType.USER_TYPES === value) {
         this.remoteService.loadWorkspace().subscribe(
           resp => {
             //console.log(resp)
@@ -122,7 +120,7 @@ export class AuthorizationComponent implements OnInit {
         this.workspaceDetails = [];
       }
 
-      if (this.AttributeType.LEVEL === value) {
+      if (this.attributeType.LEVEL === value) {
         this.remoteService.loadLevel().subscribe(resp => {
           this.levels = resp.levels;
           //console.log(resp);
@@ -132,7 +130,6 @@ export class AuthorizationComponent implements OnInit {
       }
     });
   }
-
 
 
   setAttribute(type: string) {
@@ -145,13 +142,13 @@ export class AuthorizationComponent implements OnInit {
     }
     let map = this.attributesMap.get(this.selectedPrivilege.code);
     switch (type) {
-      case  this.AttributeType.USER_TYPES :
+      case  this.attributeType.USER_TYPES :
         map?.set(type, [...this.selectedUsers]);
         break;
-      case this.AttributeType.LEVEL :
+      case this.attributeType.LEVEL :
         map?.set(type, [...this.selectedLevels]);
         break;
-      case this.AttributeType.GATEWAY :
+      case this.attributeType.GATEWAY :
         map?.set(type, [...this.selectedGateways]);
         break;
       default :

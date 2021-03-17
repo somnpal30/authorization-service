@@ -1,1 +1,35 @@
-<p>service-preference works!</p>
+<p-divider></p-divider>
+<div class="row">{{header}}</div>
+<div *ngIf="type !== attributeType.USER_TYPES">
+
+  <div class="row">
+    <div class="col-2 font-bold-12" *ngFor="let c of attributes">
+      <div class="p-field-checkbox">
+        <p-checkbox name="attrib" value="{{c.code}}" inputId="{{c.code}}"
+                    [(ngModel)]="selectedValues" (click)="setAttribute()">
+        </p-checkbox>
+        <label>{{c.name}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="type === attributeType.USER_TYPES">
+  <div *ngFor="let workspace of attributes">
+    <div class="row">
+      {{workspace.workspaceName}}
+    </div>
+    <div class="row">
+      <div class="col-3 font-bold-12" *ngFor="let c of workspace.categories">
+        <div class="p-field-checkbox">
+          <p-checkbox name="user"
+                      value="{{c.categoryId}}" inputId="{{c.categoryId}}"
+                      [(ngModel)]="selectedValues">
+          </p-checkbox>
+          <label>{{c.categoryName}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

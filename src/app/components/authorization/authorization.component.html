@@ -14,56 +14,24 @@
       <div class="row" style="padding-bottom: 1em;">Set Service Preferences</div>
 
 
-      <div *ngIf="channels.length>0">
-        <div class="row">Channels Allowed</div>
-        <div class="row">
-          <div class="col-2 font-bold-12" *ngFor="let c of channels">
-            <div class="p-field-checkbox">
-              <p-checkbox name="gateway" value="{{c.code}}" inputId="{{c.code}}"
-                          [(ngModel)]="selectedGateways"
-                          (click)="setAttribute(AttributeType.GATEWAY)">
-              </p-checkbox>
-              <label> {{c.name}}</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div *ngIf="workspaceDetails.length>0">
-        <p-divider></p-divider>
-        <div class="row">Users Allowed</div>
-        <div *ngFor="let workspace of workspaceDetails">
-          <div class="row">
-            {{workspace.workspaceName}}
-          </div>
-          <div class="row">
-            <div class="col-3 font-bold-12" *ngFor="let c of workspace.categories">
-              <div class="p-field-checkbox">
-                <p-checkbox name="user"
-                            value="{{c.categoryId}}" inputId="{{c.categoryId}}"
-                            [(ngModel)]="selectedUsers" (click)="setAttribute(AttributeType.USER_TYPES)">
-                </p-checkbox>
-                <label>{{c.categoryName}}</label>
-              </div>
-            </div>
-          </div>
-        </div>
+      <app-service-preference [attributes]="channels"
+                              [header]="'Channels Allowed'"
+                              *ngIf="channels.length>0" [type]="attributeType.GATEWAY">
+      </app-service-preference>
 
-      </div>
 
-      <div *ngIf="levels.length>0">
-        <p-divider></p-divider>
-        <div class="row">Levels</div>
-        <div class="row">
-          <div class="col-2 font-bold-12" *ngFor="let c of levels">
-            <div class="p-field-checkbox">
-              <p-checkbox name="level" value="{{c.code}}" inputId="{{c.code}}"
-                          [(ngModel)]="selectedLevels" (click)="setAttribute(AttributeType.LEVEL)">
-              </p-checkbox>
-              <label>{{c.name}}</label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-service-preference *ngIf="workspaceDetails.length>0"
+                              [attributes]="workspaceDetails"
+                              [header]="'Users Allowed'" [type]="attributeType.USER_TYPES">
+      </app-service-preference>
+
+
+
+      <app-service-preference *ngIf="levels.length>0"
+                              [attributes]="levels"
+                              [header]="'Levels'" [type]="attributeType.LEVEL">
+      </app-service-preference>
+
 
     </div>
   </div>
