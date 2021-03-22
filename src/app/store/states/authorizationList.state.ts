@@ -1,9 +1,9 @@
 import {AuthorizationProfile} from '../../shared/model/authorizationProfileList';
 
-export interface AuthorisationProfilesState {
+export interface AuthorizationProfilesState {
   authorizationProfiles: AuthorizationProfile[]
 }
 
-export const initialAuthroisationProfile: AuthorisationProfilesState = {
+export const initialAuthroizationProfile: AuthorizationProfilesState = {
   authorizationProfiles: []
 };

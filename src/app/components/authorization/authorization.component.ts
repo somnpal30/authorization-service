@@ -2,9 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Module, ModuleAndServices, Privilege} from '../../shared/model/moduleAndServices';
 
 import {WorkspaceDetails} from '../../shared/model/workspace';
-import {RemoteDataService} from '../../shared/service/remote-data.service';
 import {Attribute} from '../../shared/model/serviceDetails';
 import {ATTRIBUTE_TYPE} from '../../shared/utils/application.util';
+import {Store} from '@ngrx/store';
+import {getModuleServiceSelector} from '../../store/selectors/authorization.selector';
+import {RemoteDataService} from '../../shared/service/remote-data.service';
 
 @Component({
   selector: 'app-authorization',
@@ -17,9 +19,9 @@ export class AuthorizationComponent implements OnInit {
 
   moduleAndServiceCol: ModuleAndServices | any;
   modules: Module[] = [];
-  privileges: Privilege[];
-  channels: Attribute[];
-  levels: Attribute[];
+  privileges: Privilege[]=[];
+  channels: Attribute[]=[];
+  levels: Attribute[]=[];
   workspaceDetails: WorkspaceDetails[] = [];
 
   selectedModule: Module | any;
@@ -30,27 +32,23 @@ export class AuthorizationComponent implements OnInit {
   selectedUsers: string[];
   selectedLevels: string[];
 
-  constructor(private remoteService: RemoteDataService) {
-    this.privileges = [];
-    this.channels = [];
-    this.levels = [];
-
+  constructor(private store: Store<any>, private remoteService:RemoteDataService) {
+    this.store.select(getModuleServiceSelector).subscribe(resp => {
+      this.moduleAndServiceCol = resp;
+      this.modules = this.moduleAndServiceCol?.modules;
+      this.privileges = [];
+      this.channels = [];
+      this.levels = [];
+    });
     //this.gatewayMap = new Map<string, string[]>();
     this.attributesMap = new Map<string, Map<string, string[]>>();
-
     this.selectedGateways = this.selectedUsers = this.selectedLevels = [];
   }
 
   ngOnInit(): void {
-    this.remoteService.loadModuleAndServiceDetails().subscribe(resp => {
-      this.moduleAndServiceCol = resp;
-      this.modules = this.moduleAndServiceCol.modules;
-    }, error => {
-    });
   }
 
   displayService(event: Event) {
-
     this.selectedModule = event;
     this.privileges = this.selectedModule.privileges;
     this.resetServiceDetails();

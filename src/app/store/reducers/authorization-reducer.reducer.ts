@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import * as AuthorizationAction from '../../store/actions/authorization.action';
-import {initialAuthorizationState} from '../states/authroization.state';
-import {initialAuthroisationProfile} from '../states/authorizationList.state';
+import {initialAuthorizationProfileDetailState, initialAuthorizationState} from '../states/authroization.state';
+import {initialAuthroizationProfile} from '../states/authorizationList.state';
 import {initialAttributeState} from '../states/attributeList.state';
 
 
@@ -17,7 +17,7 @@ export const authorizationReducer = createReducer(
 );
 
 export const authorizationProfilesReducer = createReducer(
-  initialAuthroisationProfile,
+  initialAuthroizationProfile,
   on(AuthorizationAction.authorizationProfilesLoaded, (state, action) => {
     //debugger
     //console.log(state);
@@ -31,14 +31,23 @@ export const authorizationProfilesReducer = createReducer(
 
 export const attibuteListReducer = createReducer(initialAttributeState,
   on(AuthorizationAction.setAttribute, (state, action) => {
-    console.log(action.attributes)
-    console.log(action.attributeType)
+    console.log(action.attributes);
+    console.log(action.attributeType);
     return {
       ...state,
       attributes: action.attributes,
       attributeType: action.attributeType
     };
   }));
+
+export const moduleServiceReducer = createReducer(initialAuthorizationProfileDetailState,
+  on(AuthorizationAction.getModules, (state, action) => {
+    return {
+      ...state,
+      moduleAndService: action.moduleAndService
+    };
+  })
+);
 
 
 

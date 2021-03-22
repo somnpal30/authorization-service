@@ -1,6 +1,6 @@
 import {createAction, props} from '@ngrx/store';
-import {AuthorizationState} from '../states/authroization.state';
-import {AuthorisationProfilesState} from '../states/authorizationList.state';
+import {AuthorizationProfileDetailState, AuthorizationState, CategoryState} from '../states/authroization.state';
+import {AuthorizationProfilesState} from '../states/authorizationList.state';
 import {AttributeState} from '../states/attributeList.state';
 
 
@@ -13,7 +13,11 @@ export const initializeLoadAuthorizationProfiles
 
 export const authorizationProfilesLoaded
   = createAction('[Authorization List Page] Authorization List Loaded',
-  props<AuthorisationProfilesState>());
+  props<AuthorizationProfilesState>());
 
 export const setAttribute = createAction('[Service Preference] Set Selected Attribute',
   props<AttributeState>());
+
+export const initializeGetModules = createAction('[Authorization Profile] Loading Module and Services', props<CategoryState>());
+export const getModules = createAction('[Authorization Profile] Loading Module and Services', props<AuthorizationProfileDetailState>());
+

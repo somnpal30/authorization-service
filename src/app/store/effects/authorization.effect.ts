@@ -4,10 +4,15 @@ import {RemoteDataService} from '../../shared/service/remote-data.service';
 import {
   allUserLoaded,
   authorizationProfilesLoaded,
+  getModules,
+  initializeGetModules,
   initializeLoadAuthorizationProfiles,
   loadUsersType
 } from '../actions/authorization.action';
 import {concatMap, exhaustMap, map} from 'rxjs/operators';
+import {ModuleAndServices} from '../../shared/model/moduleAndServices';
+import {AuthorizationProfileDetail} from '../../shared/model/authorizationProfileDetails';
+import AuthorizationProfile = AuthorizationProfileDetail.AuthorizationProfile;
 
 @Injectable()
 export class AuthorizationEffect {
@@ -16,7 +21,6 @@ export class AuthorizationEffect {
   }
 
   getUserTypes$ = createEffect(() => {
-    console.log("1")
     return this.actions$.pipe(
       ofType(loadUsersType),
       concatMap(() => {
@@ -29,7 +33,6 @@ export class AuthorizationEffect {
     );
   });
   getAuthorizationList$ = createEffect(() => {
-    console.log('2');
     return this.actions$.pipe(
       ofType(initializeLoadAuthorizationProfiles),
       exhaustMap(() => {
@@ -41,4 +44,25 @@ export class AuthorizationEffect {
       })
     );
   });
+
+
+  getModulesAndServices$ = createEffect(() => {
+
+
+    return this.actions$.pipe(
+      ofType(initializeGetModules),
+      exhaustMap((data) => {
+        console.log(data.category);
+        return this.remoteService.loadModuleAndServiceDetails().pipe(
+          map((value) => {
+            return getModules({moduleAndService: value});
+          })
+        );
+      })
+    );
+  });
+
+
 }
+
+

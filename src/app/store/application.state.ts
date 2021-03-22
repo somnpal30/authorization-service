@@ -1,16 +1,17 @@
 import {AuthorizationState} from './states/authroization.state';
-import {AuthorisationProfilesState} from './states/authorizationList.state';
-import {attibuteListReducer, authorizationProfilesReducer, authorizationReducer} from './reducers/authorization-reducer.reducer';
+import {AuthorizationProfilesState} from './states/authorizationList.state';
+import * as ApplicationReducer from './reducers/authorization-reducer.reducer';
 
 export interface ApplicationState {
   authorizationState: AuthorizationState,
-  authorizationProfileList: AuthorisationProfilesState
+  authorizationProfileList: AuthorizationProfilesState
 }
 
 
 export const applicationReducer = {
-  users: authorizationReducer,
-  authProfiles: authorizationProfilesReducer,
-  attrib: attibuteListReducer
+  users: ApplicationReducer.authorizationReducer,
+  authProfiles: ApplicationReducer.authorizationProfilesReducer,
+  attrib: ApplicationReducer.attibuteListReducer,
+  moduleServices: ApplicationReducer.moduleServiceReducer
 };
 

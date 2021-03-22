@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AuthorizationState} from '../states/authroization.state';
-import {AuthorisationProfilesState} from '../states/authorizationList.state';
+import {AuthorizationProfileDetailState, AuthorizationState,} from '../states/authroization.state';
+import {AuthorizationProfilesState} from '../states/authorizationList.state';
 
 
 //export const selectAuthStateFeature = (state: ApplicationState) => state.authorizationState;
@@ -8,7 +8,8 @@ import {AuthorisationProfilesState} from '../states/authorizationList.state';
 
 
 const getAuthState = createFeatureSelector<AuthorizationState>('users');
-const getAuthProfileState = createFeatureSelector<AuthorisationProfilesState>('authProfiles');
+const getAuthProfileState = createFeatureSelector<AuthorizationProfilesState>('authProfiles');
+const getModuleServiceState = createFeatureSelector<AuthorizationProfileDetailState>('moduleServices');
 
 export const getWorkspace = createSelector(getAuthState, state => {
   //debugger
@@ -21,4 +22,6 @@ export const isDataLoaded = createSelector(getAuthState, state => state.loaded);
 export const getAuthorizationProfile = createSelector(getAuthProfileState, state => {
   return state.authorizationProfiles;
 });
+
+export const getModuleServiceSelector = createSelector(getModuleServiceState, state => state.moduleAndService);
 

@@ -23,7 +23,6 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.select(getWorkspace).subscribe(resp => {
-
       this.workspaceCategoryDetails = resp;
     });
   }

@@ -1,4 +1,6 @@
 import {WorkspaceDetails} from '../../shared/model/workspace';
+import {ModuleAndServices} from '../../shared/model/moduleAndServices';
+
 
 export interface AuthorizationState {
   workspaces: WorkspaceDetails[];
@@ -10,3 +12,18 @@ export const initialAuthorizationState: AuthorizationState = {
   loaded: false
 };
 
+export interface CategoryState {
+  category: string;
+}
+
+export const initialCategoryState: CategoryState = {
+  category: ''
+};
+
+export interface AuthorizationProfileDetailState {
+  moduleAndService: ModuleAndServices | undefined;
+}
+
+export const initialAuthorizationProfileDetailState: AuthorizationProfileDetailState = {
+  moduleAndService: undefined
+};

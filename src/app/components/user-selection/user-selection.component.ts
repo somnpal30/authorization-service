@@ -4,6 +4,7 @@ import {Store} from '@ngrx/store';
 
 import {getWorkspace} from '../../store/selectors/authorization.selector';
 import {AuthorizationState} from '../../store/states/authroization.state';
+import {initializeGetModules} from '../../store/actions/authorization.action';
 
 @Component({
   selector: 'app-user-selection',
@@ -17,7 +18,7 @@ export class UserSelectionComponent implements OnInit {
   selectedWorkspaceId: string = '';
   selectedCategory: string = '';
 
-  constructor(private store: Store<AuthorizationState>) {
+  constructor(private store: Store) {
   }
 
   initialize() {
@@ -55,4 +56,9 @@ export class UserSelectionComponent implements OnInit {
     }
   }
 
+  fetchModules() {
+    console.log('select category :: ', this.selectedCategory);
+
+    this.store.dispatch(initializeGetModules({category: this.selectedCategory}));
+  }
 }
