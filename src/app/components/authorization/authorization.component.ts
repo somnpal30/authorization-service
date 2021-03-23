@@ -19,9 +19,9 @@ export class AuthorizationComponent implements OnInit {
 
   moduleAndServiceCol: ModuleAndServices | any;
   modules: Module[] = [];
-  privileges: Privilege[]=[];
-  channels: Attribute[]=[];
-  levels: Attribute[]=[];
+  privileges: Privilege[] = [];
+  channels: Attribute[] = [];
+  levels: Attribute[] = [];
   workspaceDetails: WorkspaceDetails[] = [];
 
   selectedModule: Module | any;
@@ -32,7 +32,7 @@ export class AuthorizationComponent implements OnInit {
   selectedUsers: string[];
   selectedLevels: string[];
 
-  constructor(private store: Store<any>, private remoteService:RemoteDataService) {
+  constructor(private store: Store<any>, private remoteService: RemoteDataService) {
     this.store.select(getModuleServiceSelector).subscribe(resp => {
       this.moduleAndServiceCol = resp;
       this.modules = this.moduleAndServiceCol?.modules;
@@ -92,7 +92,7 @@ export class AuthorizationComponent implements OnInit {
 
     if (this.selectedPrivilege) {
       if (this.channels.length === 0) {
-        this.remoteService.loadChannel().subscribe(resp => {
+        this.remoteService.loadServices(this.attributeType.GATEWAY).subscribe(resp => {
           this.channels = resp.channels;
         });
       }
@@ -103,12 +103,9 @@ export class AuthorizationComponent implements OnInit {
 
     this.selectedPrivilege.attributes?.forEach((value: any) => {
       if (this.attributeType.USER_TYPES === value) {
-        this.remoteService.loadWorkspace().subscribe(
+        this.remoteService.loadWorkspaces().subscribe(
           resp => {
-            //console.log(resp)
-            this.workspaceDetails
-              = resp?.workspaceCategoryDetails.sort((o1, o2) => (o1.workspaceName > o2.workspaceName ? 1 : -1));
-
+            this.workspaceDetails = resp;
           },
           error => {
             console.error(error);
@@ -119,9 +116,8 @@ export class AuthorizationComponent implements OnInit {
       }
 
       if (this.attributeType.LEVEL === value) {
-        this.remoteService.loadLevel().subscribe(resp => {
+        this.remoteService.loadServices(this.attributeType.LEVEL).subscribe(resp => {
           this.levels = resp.levels;
-          //console.log(resp);
         });
       } else {
         this.levels = [];

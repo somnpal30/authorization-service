@@ -6,18 +6,19 @@ import {AuthorizationProfile, AuthorizationProfileList} from '../model/authoriza
 import {ModuleAndServices} from '../model/moduleAndServices';
 import {ServiceDetails} from '../model/serviceDetails';
 import {map} from 'rxjs/operators';
+import {ATTRIBUTE_TYPE} from '../utils/application.util';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RemoteDataService implements OnInit {
-
+  attributeType = ATTRIBUTE_TYPE;
   constructor(private httpClient: HttpClient) {
   }
 
-  loadWorkspace(): Observable<Workspace> {
+ /* loadWorkspace(): Observable<Workspace> {
     return this.httpClient.get<Workspace>('./assets/data/workspace.json');
-  }
+  }*/
 
   loadWorkspaces(): Observable<WorkspaceDetails[]> {
     return this.httpClient.get<Workspace>('./assets/data/workspace.json').pipe(
@@ -25,9 +26,10 @@ export class RemoteDataService implements OnInit {
       ));
   }
 
-  loadAuthorizationProfileList(): Observable<AuthorizationProfileList> {
+  /*loadAuthorizationProfileList(): Observable<AuthorizationProfileList> {
     return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json');
-  }
+  }*/
+
   loadAuthorizationProfiles(): Observable<AuthorizationProfile[]> {
     return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json')
       .pipe(map(resp => resp.authorizationProfiles));
@@ -37,12 +39,30 @@ export class RemoteDataService implements OnInit {
     return this.httpClient.get<ModuleAndServices>('./assets/data/headmerchant.json');
   }
 
-  loadChannel(): Observable<ServiceDetails> {
+/*  loadChannel(): Observable<ServiceDetails> {
     return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/channel.json');
   }
 
   loadLevel(): Observable<ServiceDetails> {
     return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/level.json');
+  }*/
+
+  loadServices(type: string, args: string = ''): Observable<ServiceDetails> {
+    var url: string = '';
+    switch (type) {
+      case this.attributeType.USER_TYPES :
+        break;
+      case this.attributeType.LEVEL :
+        url = './assets/data/catalogue/level.json';
+        break;
+      case this.attributeType.GATEWAY :
+        url = './assets/data/catalogue/channel.json';
+        break;
+      default :
+        console.log('NO records available for key : ', type);
+
+    }
+    return this.httpClient.get<ServiceDetails>(url);
   }
 
 

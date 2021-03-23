@@ -9,10 +9,8 @@ import {
   initializeLoadAuthorizationProfiles,
   loadUsersType
 } from '../actions/authorization.action';
-import {concatMap, exhaustMap, map} from 'rxjs/operators';
-import {ModuleAndServices} from '../../shared/model/moduleAndServices';
-import {AuthorizationProfileDetail} from '../../shared/model/authorizationProfileDetails';
-import AuthorizationProfile = AuthorizationProfileDetail.AuthorizationProfile;
+import {catchError, exhaustMap, map, mergeMap} from 'rxjs/operators';
+import {EMPTY} from 'rxjs';
 
 @Injectable()
 export class AuthorizationEffect {
@@ -23,15 +21,22 @@ export class AuthorizationEffect {
   getUserTypes$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(loadUsersType),
-      concatMap(() => {
+      mergeMap((action) => {
+        console.log(action);
         return this.remoteService.loadWorkspaces().pipe(
           map((data) => {
-            return allUserLoaded({workspaces: data, loaded: true});
+              return allUserLoaded({workspaces: data, loaded: true});
+            }
+          ), catchError((e) => {
+            console.error('unable to call remote api.', e);
+            return EMPTY;
           })
         );
-      })
+      }),
     );
   });
+
+
   getAuthorizationList$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(initializeLoadAuthorizationProfiles),
@@ -47,9 +52,7 @@ export class AuthorizationEffect {
 
 
   getModulesAndServices$ = createEffect(() => {
-
-
-    return this.actions$.pipe(
+   return this.actions$.pipe(
       ofType(initializeGetModules),
       exhaustMap((data) => {
         console.log(data.category);
