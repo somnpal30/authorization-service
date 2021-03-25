@@ -5,8 +5,7 @@ import {WorkspaceDetails} from '../../shared/model/workspace';
 import {Attribute} from '../../shared/model/serviceDetails';
 import {ATTRIBUTE_TYPE} from '../../shared/utils/application.util';
 import {Store} from '@ngrx/store';
-import {getModuleServiceSelector} from '../../store/selectors/authorization.selector';
-import {RemoteDataService} from '../../shared/service/remote-data.service';
+import {getChannelSelector, getLevelSelector, getModuleServiceSelector, getWorkspace} from '../../store/selectors/authorization.selector';
 
 @Component({
   selector: 'app-authorization',
@@ -22,6 +21,8 @@ export class AuthorizationComponent implements OnInit {
   privileges: Privilege[] = [];
   channels: Attribute[] = [];
   levels: Attribute[] = [];
+  myLevels: Attribute[] | undefined;
+
   workspaceDetails: WorkspaceDetails[] = [];
 
   selectedModule: Module | any;
@@ -32,7 +33,7 @@ export class AuthorizationComponent implements OnInit {
   selectedUsers: string[];
   selectedLevels: string[];
 
-  constructor(private store: Store<any>, private remoteService: RemoteDataService) {
+  constructor(private store: Store<any>) {
     this.store.select(getModuleServiceSelector).subscribe(resp => {
       this.moduleAndServiceCol = resp;
       this.modules = this.moduleAndServiceCol?.modules;
@@ -65,92 +66,40 @@ export class AuthorizationComponent implements OnInit {
     this.selectedPrivilege = event;
     this.selectedGateways = this.selectedLevels = this.selectedUsers = [];
 
-    if (!this.attributesMap.has(this.selectedPrivilege.code)) {
-      this.attributesMap.set(this.selectedPrivilege.code, new Map<string, string[]>());
-
-    } else {
-      let map = this.attributesMap.get(this.selectedPrivilege.code);
-      map?.forEach(((value, key) => {
-            switch (key) {
-              case  this.attributeType.USER_TYPES :
-                this.selectedUsers = value;
-                break;
-              case this.attributeType.LEVEL :
-                this.selectedLevels = value;
-                break;
-              case this.attributeType.GATEWAY :
-                this.selectedGateways = value;
-                break;
-              default :
-                console.log('NO records available for key : ', key);
-            }
-          }
-        )
-      );
-    }
-
 
     if (this.selectedPrivilege) {
-      if (this.channels.length === 0) {
-        this.remoteService.loadServices(this.attributeType.GATEWAY).subscribe(resp => {
-          this.channels = resp.channels;
-        });
-      }
+      // if (this.channels.length === 0) {
+      this.store.select(getChannelSelector).subscribe(resp => {
+        this.channels = resp;
+      });
+      // }
     } else {
       this.channels = [];
     }
 
 
     this.selectedPrivilege.attributes?.forEach((value: any) => {
-      if (this.attributeType.USER_TYPES === value) {
-        this.remoteService.loadWorkspaces().subscribe(
-          resp => {
+
+      switch (value) {
+        case this.attributeType.USER_TYPES :
+          this.store.select(getWorkspace).subscribe(resp => {
             this.workspaceDetails = resp;
-          },
-          error => {
-            console.error(error);
-          }
-        );
-      } else {
-        this.workspaceDetails = [];
+          });
+          break;
+        case this.attributeType.LEVEL :
+          this.store.select(getLevelSelector).subscribe(resp => {
+            this.levels = resp;
+            console.log(this.levels);
+          });
+          break;
+        default :
+          this.workspaceDetails = this.levels = [];
       }
 
-      if (this.attributeType.LEVEL === value) {
-        this.remoteService.loadServices(this.attributeType.LEVEL).subscribe(resp => {
-          this.levels = resp.levels;
-        });
-      } else {
-        this.levels = [];
-      }
     });
   }
 
 
-  setAttribute(type: string) {
-    console.log(type);
-
-
-    if (!(this.attributesMap.has(this.selectedPrivilege.code)
-      && this.attributesMap.get(this.selectedPrivilege.code)?.has(type))) {
-      this.attributesMap.set(this.selectedPrivilege.code, new Map<string, string[]>().set(type, []));
-    }
-    let map = this.attributesMap.get(this.selectedPrivilege.code);
-    switch (type) {
-      case  this.attributeType.USER_TYPES :
-        map?.set(type, [...this.selectedUsers]);
-        break;
-      case this.attributeType.LEVEL :
-        map?.set(type, [...this.selectedLevels]);
-        break;
-      case this.attributeType.GATEWAY :
-        map?.set(type, [...this.selectedGateways]);
-        break;
-      default :
-        console.log('NO type found : ', type);
-    }
-
-
-  }
 }
 
 

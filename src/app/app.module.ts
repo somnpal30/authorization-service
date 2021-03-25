@@ -11,16 +11,17 @@ import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {AuthorizationEffect} from './store/effects/authorization.effect';
 import {AuthorizationResolver} from './store/resolver/authorization.resolver';
-import {applicationReducer} from './store/application.state';
+
 import {AuthorizationProfileResolver} from './store/resolver/authorizationProfile.resolver';
 import {FormsModule} from '@angular/forms';
+import {ChannelResolver} from './store/resolver/channel.resolver';
+import {LevelResolver} from './store/resolver/level.resolver';
+import {applicationReducer} from './store/reducers/authorization-reducer.reducer';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
   ],
   imports: [
     HttpClientModule,
@@ -36,8 +37,15 @@ import {FormsModule} from '@angular/forms';
 
 
   ],
-  providers: [AuthorizationResolver, AuthorizationProfileResolver],
+  providers: [
+    AuthorizationResolver,
+    AuthorizationProfileResolver,
+    ChannelResolver,
+    LevelResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+
+

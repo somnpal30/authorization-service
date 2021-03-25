@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import * as AuthorizationAction from '../../store/actions/authorization.action';
-import {initialAuthorizationProfileDetailState, initialAuthorizationState} from '../states/authroization.state';
+import {defaultServiceDetailState, initialAuthorizationProfileDetailState, initialAuthorizationState} from '../states/authroization.state';
 import {initialAuthroizationProfile} from '../states/authorizationList.state';
 import {initialAttributeState} from '../states/attributeList.state';
 
@@ -29,7 +29,7 @@ export const authorizationProfilesReducer = createReducer(
   })
 );
 
-export const attibuteListReducer = createReducer(initialAttributeState,
+export const attributeListReducer = createReducer(initialAttributeState,
   on(AuthorizationAction.setAttribute, (state, action) => {
     console.log(action.attributes);
     console.log(action.attributeType);
@@ -48,6 +48,37 @@ export const moduleServiceReducer = createReducer(initialAuthorizationProfileDet
     };
   })
 );
+
+export const serviceReducer = createReducer(
+  defaultServiceDetailState,
+  on(AuthorizationAction.levelAction, (state, action) => {
+    console.log(AuthorizationAction.levelAction.type);
+    return {
+      ...state,
+      levels: action.levels
+    };
+  }),
+  on(AuthorizationAction.channelAction, (state, action) => {
+    console.log(AuthorizationAction.channelAction.type);
+    return {
+      ...state,
+      channels: action.channels
+
+    };
+  }),
+);
+
+
+export const applicationReducer = {
+  users: authorizationReducer,
+  authProfiles: authorizationProfilesReducer,
+  attrib: attributeListReducer,
+  moduleServices: moduleServiceReducer,
+  services: serviceReducer,
+
+};
+
+
 
 
 

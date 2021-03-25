@@ -39,7 +39,7 @@ export class RemoteDataService implements OnInit {
     return this.httpClient.get<ModuleAndServices>('./assets/data/headmerchant.json');
   }
 
-/*  loadChannel(): Observable<ServiceDetails> {
+/* loadChannel(): Observable<ServiceDetails> {
     return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/channel.json');
   }
 

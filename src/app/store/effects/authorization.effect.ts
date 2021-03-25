@@ -4,13 +4,18 @@ import {RemoteDataService} from '../../shared/service/remote-data.service';
 import {
   allUserLoaded,
   authorizationProfilesLoaded,
+  channelAction,
   getModules,
+  initialChannelAction,
   initializeGetModules,
   initializeLoadAuthorizationProfiles,
-  loadUsersType
+  initialLevelAction,
+  levelAction,
+  loadUsersType,
 } from '../actions/authorization.action';
 import {catchError, exhaustMap, map, mergeMap} from 'rxjs/operators';
 import {EMPTY} from 'rxjs';
+import {ATTRIBUTE_TYPE} from '../../shared/utils/application.util';
 
 @Injectable()
 export class AuthorizationEffect {
@@ -22,7 +27,7 @@ export class AuthorizationEffect {
     return this.actions$.pipe(
       ofType(loadUsersType),
       mergeMap((action) => {
-        console.log(action);
+        //console.log(action);
         return this.remoteService.loadWorkspaces().pipe(
           map((data) => {
               return allUserLoaded({workspaces: data, loaded: true});
@@ -52,10 +57,10 @@ export class AuthorizationEffect {
 
 
   getModulesAndServices$ = createEffect(() => {
-   return this.actions$.pipe(
+    return this.actions$.pipe(
       ofType(initializeGetModules),
       exhaustMap((data) => {
-        console.log(data.category);
+        //console.log(data.category);
         return this.remoteService.loadModuleAndServiceDetails().pipe(
           map((value) => {
             return getModules({moduleAndService: value});
@@ -65,6 +70,34 @@ export class AuthorizationEffect {
     );
   });
 
+
+  levelEffect$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(initialLevelAction),
+      mergeMap((data) => {
+        return this.remoteService.loadServices(ATTRIBUTE_TYPE.LEVEL).pipe(
+          map(value => {
+            console.log(value);
+            return levelAction({levels: value.levels});
+          })
+        );
+      })
+    );
+  });
+
+  channelEffect$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(initialChannelAction),
+      mergeMap((data) => {
+        return this.remoteService.loadServices(ATTRIBUTE_TYPE.GATEWAY).pipe(
+          map(value => {
+            console.log(value);
+            return channelAction({channels: value.channels});
+          })
+        );
+      })
+    );
+  });
 
 }
 

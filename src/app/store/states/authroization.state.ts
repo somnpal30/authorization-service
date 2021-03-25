@@ -1,5 +1,6 @@
 import {WorkspaceDetails} from '../../shared/model/workspace';
 import {ModuleAndServices} from '../../shared/model/moduleAndServices';
+import {Attribute, ServiceDetails} from '../../shared/model/serviceDetails';
 
 
 export interface AuthorizationState {
@@ -26,4 +27,11 @@ export interface AuthorizationProfileDetailState {
 
 export const initialAuthorizationProfileDetailState: AuthorizationProfileDetailState = {
   moduleAndService: undefined
+};
+
+
+
+export const defaultServiceDetailState: ServiceDetails = {
+  channels: [],
+  levels: []
 };

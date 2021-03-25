@@ -1,31 +1,25 @@
-import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
-import {select, Store} from '@ngrx/store';
-
+import {Injectable} from '@angular/core';
+import {Store} from '@ngrx/store';
 import {finalize, first, tap} from 'rxjs/operators';
-import {loadUsersType} from '../actions/authorization.action';
-import {isDataLoaded} from '../selectors/authorization.selector';
-
+import {initialChannelAction} from '../actions/authorization.action';
 
 @Injectable()
-export class AuthorizationResolver implements Resolve<any> {
-
+export class ChannelResolver implements Resolve<any> {
   loading = false;
 
   constructor(private store: Store<any>) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+    //console.log('level resolver');
     return this.store.pipe(
-      select(isDataLoaded),
-      tap((loadingStatus ) => {
-        //console.log('workspaceLoaded ', loadingStatus);
-        if (!this.loading && !loadingStatus) {
+      tap(() => {
+        if (!this.loading) {
           this.loading = true;
-          this.store.dispatch(loadUsersType());
+          this.store.dispatch(initialChannelAction());
         }
-
       }),
       first(),
       finalize(() => {
@@ -33,5 +27,4 @@ export class AuthorizationResolver implements Resolve<any> {
       })
     );
   }
-
 }

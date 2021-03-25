@@ -19,18 +19,17 @@
                               *ngIf="channels.length>0" [type]="attributeType.GATEWAY">
       </app-service-preference>
 
-
       <app-service-preference *ngIf="workspaceDetails.length>0"
                               [attributes]="workspaceDetails"
                               [header]="'Users Allowed'" [type]="attributeType.USER_TYPES">
       </app-service-preference>
 
-
-
       <app-service-preference *ngIf="levels.length>0"
                               [attributes]="levels"
                               [header]="'Levels'" [type]="attributeType.LEVEL">
       </app-service-preference>
+
+
 
 
     </div>
