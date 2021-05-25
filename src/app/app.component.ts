@@ -46,14 +46,14 @@ export class AppComponent implements OnInit {
 
   // @HostListener('window:beforeunload', ['$event'])
   unloadHandler = (event: Event) => {
-    console.log('Processing beforeunload...', this.myValue);
+
     this.processData();
     event.returnValue = true;
   }
   processData = () => {
     // window.confirm('hi');
     // store data into local storage before browser refresh
-    localStorage.setItem('data', this.myValue + new Date());
+    localStorage.setItem('data', '' + new Date());
   }
 }
 
