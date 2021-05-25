@@ -6,6 +6,7 @@ import {Attribute} from '../../shared/model/serviceDetails';
 import {ATTRIBUTE_TYPE} from '../../shared/utils/application.util';
 import {Store} from '@ngrx/store';
 import {getChannelSelector, getLevelSelector, getModuleServiceSelector, getWorkspace} from '../../store/selectors/authorization.selector';
+import {AuthorizationProfile} from '../../shared/model/authorizationProfileDetails';
 
 @Component({
   selector: 'app-authorization',
@@ -33,6 +34,9 @@ export class AuthorizationComponent implements OnInit {
   selectedUsers: string[];
   selectedLevels: string[];
 
+  // TO SAVE.
+
+
   constructor(private store: Store<any>) {
     this.store.select(getModuleServiceSelector).subscribe(resp => {
       this.moduleAndServiceCol = resp;
@@ -47,6 +51,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   displayService(event: Event) {
@@ -101,6 +106,3 @@ export class AuthorizationComponent implements OnInit {
 
 
 }
-
-
-

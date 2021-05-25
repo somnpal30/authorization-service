@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {CanDeactivateGuard} from './util/can-deactivate.guard';
 
 const routes: Routes = [
   {
@@ -8,12 +9,13 @@ const routes: Routes = [
   {
     path: 'authorization-list',
     loadChildren: () => import('./modules/authorization-list/authorization-list.module')
-      .then(m => m.AuthorizationListModule),
+      .then(m => m.AuthorizationListModule)
   },
   {
     path: 'authorization-profile',
     loadChildren: () => import('./modules/authorization-profile/authorization-profile.module')
-      .then(m => m.AuthorizationProfileModule)
+      .then(m => m.AuthorizationProfileModule),
+    canDeactivate: [CanDeactivateGuard]
   },
   {
     path: '**', redirectTo: 'authorization-list'

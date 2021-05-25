@@ -17,6 +17,7 @@ import {FormsModule} from '@angular/forms';
 import {ChannelResolver} from './store/resolver/channel.resolver';
 import {LevelResolver} from './store/resolver/level.resolver';
 import {applicationReducer} from './store/reducers/authorization-reducer.reducer';
+import {CanDeactivateGuard} from "./util/can-deactivate.guard";
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {applicationReducer} from './store/reducers/authorization-reducer.reducer
     AuthorizationResolver,
     AuthorizationProfileResolver,
     ChannelResolver,
-    LevelResolver
+    LevelResolver,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
