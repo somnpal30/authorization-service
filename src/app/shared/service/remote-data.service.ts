@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {AuthorizationProfile, AuthorizationProfileList} from '../model/authorizationProfileList';
 import {ModuleAndServices} from '../model/moduleAndServices';
 import {ServiceDetails} from '../model/serviceDetails';
-import {map} from 'rxjs/operators';
+import {debounceTime, delay, map} from 'rxjs/operators';
 import {ATTRIBUTE_TYPE} from '../utils/application.util';
 
 @Injectable({
@@ -13,12 +13,13 @@ import {ATTRIBUTE_TYPE} from '../utils/application.util';
 })
 export class RemoteDataService implements OnInit {
   attributeType = ATTRIBUTE_TYPE;
+
   constructor(private httpClient: HttpClient) {
   }
 
- /* loadWorkspace(): Observable<Workspace> {
-    return this.httpClient.get<Workspace>('./assets/data/workspace.json');
-  }*/
+  /* loadWorkspace(): Observable<Workspace> {
+     return this.httpClient.get<Workspace>('./assets/data/workspace.json');
+   }*/
 
   loadWorkspaces(): Observable<WorkspaceDetails[]> {
     return this.httpClient.get<Workspace>('./assets/data/workspace.json').pipe(
@@ -32,20 +33,21 @@ export class RemoteDataService implements OnInit {
 
   loadAuthorizationProfiles(): Observable<AuthorizationProfile[]> {
     return this.httpClient.get<AuthorizationProfileList>('./assets/data/view-auth-profile-list.json')
-      .pipe(map(resp => resp.authorizationProfiles));
+      .pipe(
+        map(resp => resp.authorizationProfiles));
   }
 
   loadModuleAndServiceDetails(): Observable<ModuleAndServices> {
     return this.httpClient.get<ModuleAndServices>('./assets/data/headmerchant.json');
   }
 
-/* loadChannel(): Observable<ServiceDetails> {
-    return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/channel.json');
-  }
+  /* loadChannel(): Observable<ServiceDetails> {
+      return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/channel.json');
+    }
 
-  loadLevel(): Observable<ServiceDetails> {
-    return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/level.json');
-  }*/
+    loadLevel(): Observable<ServiceDetails> {
+      return this.httpClient.get<ServiceDetails>('./assets/data/catalogue/level.json');
+    }*/
 
   loadServices(type: string, args: string = ''): Observable<ServiceDetails> {
     var url: string = '';

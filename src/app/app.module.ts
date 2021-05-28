@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {StoreModule} from '@ngrx/store';
@@ -17,12 +17,16 @@ import {FormsModule} from '@angular/forms';
 import {ChannelResolver} from './store/resolver/channel.resolver';
 import {LevelResolver} from './store/resolver/level.resolver';
 import {applicationReducer} from './store/reducers/authorization-reducer.reducer';
-import {CanDeactivateGuard} from "./util/can-deactivate.guard";
+import {CanDeactivateGuard} from './shared/utils/can-deactivate.guard';
+import {CustomHttpInterceptor} from './shared/utils/CustomHttpInterceptor';
+
+import {LoaderComponent} from './components/loader/loader.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoaderComponent,
   ],
   imports: [
     HttpClientModule,
@@ -43,7 +47,12 @@ import {CanDeactivateGuard} from "./util/can-deactivate.guard";
     AuthorizationProfileResolver,
     ChannelResolver,
     LevelResolver,
-    CanDeactivateGuard
+    CanDeactivateGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

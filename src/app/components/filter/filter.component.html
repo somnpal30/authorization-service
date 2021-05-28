@@ -17,7 +17,7 @@
       <div class="col-12 font-bold" style="padding: .5rem">{{workspace.workspaceName}}</div>
       <div class="col-2 font-bold-12" *ngFor="let category of workspace.categories">
         <div class="p-field-checkbox">
-          <p-checkbox name="group1" value="{{category.categoryId}}" [(ngModel)]="selectedValues"
+          <p-checkbox name="group1" value="{{category.categoryName}}" [(ngModel)]="selectedValues"
                       inputId="{{category.categoryId}}" (click)="traceClick()"></p-checkbox>
           <label for="{{category.categoryId}}"> {{category.categoryName}}</label>
         </div>

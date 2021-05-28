@@ -3,7 +3,7 @@ import {WorkspaceDetails} from '../../shared/model/workspace';
 import {Store} from '@ngrx/store';
 
 import {getWorkspace} from '../../store/selectors/authorization.selector';
-import {ApplicationState} from '../../store/application.state';
+import {SharedDataService} from '../../shared/service/shared-data.service';
 
 
 @Component({
@@ -16,9 +16,10 @@ export class FilterComponent implements OnInit {
   workspaceCategoryDetails: WorkspaceDetails[] | undefined;
   selectedValues: string[] = [];
   appliedFilterValues: string[] = [];
-  badgeCounter: number = 0;
+  badgeCounter = 0;
 
-  constructor(private store: Store<any>) {
+
+  constructor(private store: Store<any>, private dateService: SharedDataService) {
   }
 
   ngOnInit(): void {
@@ -27,24 +28,25 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  traceClick() {
-    //console.log(val);
-    console.log(this.selectedValues);
+  traceClick = () => {
+    // console.log(val);
+    // console.log(this.selectedValues);
   }
 
-  clearFilter() {
+  clearFilter = () => {
     this.selectedValues = [];
     this.appliedFilterValues = [];
     this.badgeCounter = 0;
   }
 
-  applyFilter() {
+  applyFilter = () => {
     this.badgeCounter = this.selectedValues.length;
     this.appliedFilterValues = [...this.selectedValues];
+    this.dateService.setSelectedFilterVal([...this.selectedValues]);
   }
 
-  fetchRecords(){
-    //this.store.dispatch(initializeLoadAuthzListAction());
+  fetchRecords = () => {
+    // this.store.dispatch(initializeLoadAuthzListAction());
   }
 
 }
